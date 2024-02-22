@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://fnht4j26uknx"]
+
+[ext_resource type="Shader" path="res://Scenes/niu/Shaders/fog_shader.gdshader" id="1_32tib"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_4akxj"]
+noise_type = 5
+frequency = 0.0288
+fractal_octaves = 10
+fractal_gain = 1.0
+fractal_weighted_strength = 0.41
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_vd6nj"]
+width = 1152
+height = 658
+seamless = true
+seamless_blend_skirt = 0.762
+noise = SubResource("FastNoiseLite_4akxj")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2rik4"]
+shader = ExtResource("1_32tib")
+shader_parameter/density = 0.25
+shader_parameter/speed = Vector2(0.9, 0.5)
+shader_parameter/noise_texture = SubResource("NoiseTexture2D_vd6nj")
+
+[node name="ParallaxBackground" type="ParallaxBackground"]
+layer = 50
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+position = Vector2(-1312, -504)
+motion_mirroring = Vector2(1152, 648)
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxLayer"]
+material = SubResource("ShaderMaterial_2rik4")
+offset_right = 1152.0
+offset_bottom = 648.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://bnws40ftmi68d"]
+[gd_scene load_steps=47 format=3 uid="uid://bnws40ftmi68d"]
 
 [ext_resource type="Texture2D" uid="uid://bly2soiytbhkk" path="res://Art/Character/Character Spritesheets/SpriteSheet - Front Idle.png" id="1_bntf0"]
 [ext_resource type="Script" path="res://Player/src/character_body_2d.gd" id="1_y8ivw"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ddh21ctfckewr" path="res://Art/Character/Character Spritesheets/SpriteSheet - Left Running.png" id="6_jfe3k"]
 [ext_resource type="Texture2D" uid="uid://xpkv7jmsflb3" path="res://Art/Character/Character Spritesheets/SpriteSheet - Right Running.png" id="7_ywc8j"]
 [ext_resource type="Texture2D" uid="uid://cpnoaliilyfoj" path="res://Art/Character/Character Spritesheets/SpriteSheet - Back Running.png" id="8_iomru"]
+[ext_resource type="PackedScene" uid="uid://fnht4j26uknx" path="res://Scenes/niu/Shaders/parallax_background.tscn" id="10_tb50q"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l3xu0"]
 radius = 5.5
@@ -304,6 +305,8 @@ sprite_frames = SubResource("SpriteFrames_itd00")
 animation = &"run_up"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="ParallaxBackground" parent="Camera2D" instance=ExtResource("10_tb50q")]
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 color = Color(0.733333, 0.690196, 0.509804, 1)
