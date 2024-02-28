@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://bnws40ftmi68d"]
+[gd_scene load_steps=48 format=3 uid="uid://bnws40ftmi68d"]
 
 [ext_resource type="Texture2D" uid="uid://bly2soiytbhkk" path="res://Art/Character/Character Spritesheets/SpriteSheet - Front Idle.png" id="1_bntf0"]
 [ext_resource type="Script" path="res://Player/src/character_body_2d.gd" id="1_y8ivw"]
@@ -282,6 +282,12 @@ animations = [{
 "speed": 7.0
 }]
 
+[sub_resource type="LabelSettings" id="LabelSettings_rkl1s"]
+font_size = 30
+shadow_size = 12
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(3, 3)
+
 [sub_resource type="Gradient" id="Gradient_jrnwh"]
 offsets = PackedFloat32Array(0, 0.693548)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
@@ -307,6 +313,16 @@ animation = &"run_up"
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="ParallaxBackground" parent="Camera2D" instance=ExtResource("10_tb50q")]
+
+[node name="selected_item" type="Label" parent="Camera2D"]
+offset_left = -556.0
+offset_top = -308.0
+offset_right = -399.0
+offset_bottom = -266.0
+text = "none"
+label_settings = SubResource("LabelSettings_rkl1s")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 color = Color(0.733333, 0.690196, 0.509804, 1)

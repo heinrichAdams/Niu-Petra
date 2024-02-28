@@ -18,7 +18,9 @@ const speed : int = 200
 var state : STATE = STATE.IDLE
 var direction : DIRECTION = DIRECTION.DOWN
 @onready var animated_sprite_2d : AnimatedSprite2D = $AnimatedSprite2D
+@onready var selected_item = $Camera2D/selected_item
 # ENDOF GLOBAL VARS
+
 
 ### _physics_process ###
 func _physics_process(delta):
@@ -83,3 +85,6 @@ func player_animation():
 					animated_sprite_2d.play("idle_right")
 
 ### ENDOF player_animation ###
+
+func set_temporary_hotbar_label(new_text):
+	selected_item.text = new_text
