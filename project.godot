@@ -95,3 +95,7 @@ quick_load={
 [physics]
 
 2d/default_gravity=1500.0
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"

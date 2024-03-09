@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://jlsrorbp7qbr"]
+
+[ext_resource type="Texture2D" uid="uid://cp0dgfucd333h" path="res://Art/32x32pixelmeleeweapon.png" id="1_sfmgj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l6fnx"]
+size = Vector2(4, 28)
+
+[node name="Weapon" type="Area2D"]
+scale = Vector2(2, 2)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -13)
+rotation = -0.785398
+texture = ExtResource("1_sfmgj")
+hframes = 12
+vframes = 4
+frame = 38
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -21)
+shape = SubResource("RectangleShape2D_l6fnx")
