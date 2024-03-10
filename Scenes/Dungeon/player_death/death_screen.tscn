@@ -1,0 +1,113 @@
+[gd_scene load_steps=10 format=3 uid="uid://do2qmoc3oo72s"]
+
+[ext_resource type="FontFile" uid="uid://drbocs0rjxrgx" path="res://Fonts/PixelifySans-VariableFont_wght.ttf" id="1_nggvt"]
+[ext_resource type="Script" path="res://Scenes/Dungeon/player_death/death_screen.gd" id="2_6d5sg"]
+[ext_resource type="Shader" path="res://Scenes/Dungeon/player_death/death_screen.gdshader" id="2_k1lsx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uohq4"]
+shader = ExtResource("2_k1lsx")
+shader_parameter/r_displacement = Vector2(19.605, 8.135)
+shader_parameter/g_displacement = Vector2(5.24, -4.71)
+shader_parameter/b_displacement = Vector2(4.185, -4.425)
+
+[sub_resource type="Gradient" id="Gradient_ujmjq"]
+interpolation_color_space = 2
+colors = PackedColorArray(0, 0, 0, 1, 0.0807833, 0.0807833, 0.0807833, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_3ycbq"]
+gradient = SubResource("Gradient_ujmjq")
+use_hdr = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_r271j"]
+font = ExtResource("1_nggvt")
+font_size = 124
+font_color = Color(1, 0, 0, 1)
+shadow_size = 12
+shadow_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_802tq"]
+font = ExtResource("1_nggvt")
+font_size = 31
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7hp6q"]
+shader = ExtResource("2_k1lsx")
+shader_parameter/r_displacement = Vector2(1.935, 0.19)
+shader_parameter/g_displacement = Vector2(0, 0)
+shader_parameter/b_displacement = Vector2(-3, 0)
+
+[node name="death_screen" type="Control"]
+material = SubResource("ShaderMaterial_uohq4")
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_6d5sg")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+
+[node name="background" type="Sprite2D" parent="CanvasModulate"]
+position = Vector2(520, 325)
+scale = Vector2(7.54, 689.425)
+texture = SubResource("GradientTexture1D_3ycbq")
+
+[node name="title" type="Label" parent="CanvasModulate"]
+texture_filter = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 248.0
+offset_top = 88.0
+offset_right = 905.0
+offset_bottom = 246.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "You Died"
+label_settings = SubResource("LabelSettings_r271j")
+horizontal_alignment = 1
+
+[node name="message" type="Label" parent="CanvasModulate"]
+texture_filter = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 214.0
+offset_top = 300.0
+offset_right = 939.0
+offset_bottom = 458.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Your soul has dissipated.
+You return to your corporeal form in Niu Petra..."
+label_settings = SubResource("LabelSettings_802tq")
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasModulate"]
+material = SubResource("ShaderMaterial_7hp6q")
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.8, 16.28)
+
+[node name="Button" type="Button" parent="CanvasModulate"]
+texture_filter = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 443.0
+offset_top = 475.0
+offset_right = 694.0
+offset_bottom = 551.0
+grow_horizontal = 2
+scale = Vector2(1.07924, 1.15638)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_nggvt")
+theme_override_font_sizes/font_size = 36
+text = "Continue"
+
+[connection signal="pressed" from="CanvasModulate/Button" to="." method="_on_button_pressed"]

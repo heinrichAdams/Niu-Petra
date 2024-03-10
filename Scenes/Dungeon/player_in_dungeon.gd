@@ -2,8 +2,8 @@ extends CharacterBody2D
 
 
 
-const JUMP_VELOCITY = -600.0
-
+const JUMP_VELOCITY = -800.0
+const KNOCKBACK_VELOCITY = 10
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -22,6 +22,8 @@ enum DIRECTION{
 # ENDOF ENUMS
 
 # GLOBAL VARS
+@export var max_health : int = 3
+@onready var current_health : int = max_health
 const speed : int = 200
 var state : STATE = STATE.IDLE
 var direction : DIRECTION = DIRECTION.LEFT
@@ -40,6 +42,7 @@ func _physics_process(delta):
 	player_movement(delta)
 	player_animation()
 	move_and_slide()
+	handle_enemy_collison()
 ### ENDOF _physics_process ###
 	
 ### player_movement ###
@@ -102,5 +105,21 @@ func player_animation():
 func set_temporary_hotbar_label(new_text):
 	selected_item.text = new_text
 
+func handle_enemy_collison():
+	pass
 
+func _on_hurtbox_area_entered(area):
+	if area.name == "hitbox":
+		current_health -= 1
+		knockback()
+	if current_health <= 0:
+		get_tree().change_scene_to_file("res://Scenes/Dungeon/player_death/death_screen.tscn")
+		
+	print(current_health)
 
+func knockback():
+	var knockback_direction = - velocity
+	velocity = knockback_direction * KNOCKBACK_VELOCITY
+	move_and_slide()
+	
+	
