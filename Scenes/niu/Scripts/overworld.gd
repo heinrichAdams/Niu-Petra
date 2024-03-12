@@ -38,6 +38,7 @@ var can_place_water_tile = 0
 func _ready():
 	character_body_2d.set_temporary_hotbar_label(player_data.get_hotbar_slot_contents(selected_slot))
 	quick_load()
+	character_body_2d.set_selected_slot(1)
 	pass
 
 
@@ -69,18 +70,22 @@ func _input(_event):
 		
 	if Input.is_action_just_pressed("slot_1"):
 		selected_slot = SELECTION.SLOT_1
+		character_body_2d.set_selected_slot(1)
 		character_body_2d.set_temporary_hotbar_label(player_data.get_hotbar_slot_contents(selected_slot))
 		
 	if Input.is_action_just_pressed("slot_2"):
 		selected_slot = SELECTION.SLOT_2
+		character_body_2d.set_selected_slot(2)
 		character_body_2d.set_temporary_hotbar_label(player_data.get_hotbar_slot_contents(selected_slot))
 			
 	if Input.is_action_just_pressed("slot_3"):
 		selected_slot = SELECTION.SLOT_3
+		character_body_2d.set_selected_slot(3)
 		character_body_2d.set_temporary_hotbar_label(player_data.get_hotbar_slot_contents(selected_slot))
 		
 	if Input.is_action_just_pressed("slot_4"):
 		selected_slot = SELECTION.SLOT_4
+		character_body_2d.set_selected_slot(4)
 		character_body_2d.set_temporary_hotbar_label(player_data.get_hotbar_slot_contents(selected_slot))
 
 # QUICK_SAVE

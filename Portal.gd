@@ -1,11 +1,11 @@
 extends Node
-@onready var animated_sprite_2d = $Area2D/AnimatedSprite2D
+
 
 signal Portal_entered
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	animated_sprite_2d.play("default")
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

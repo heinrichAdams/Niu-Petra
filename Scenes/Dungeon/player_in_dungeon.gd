@@ -35,7 +35,7 @@ var direction : DIRECTION = DIRECTION.LEFT
 
 
 func _ready():
-	weapon.visible = false
+	weapon.disable()
 
 ### _physics_process ###
 func _physics_process(delta):
@@ -96,9 +96,15 @@ func player_animation():
 		STATE.ATTACK:
 			match direction:
 				DIRECTION.LEFT:
+					weapon.enable()
 					animation_player.play("attack_left")
+					await animation_player.animation_finished
+					weapon.disable()
 				DIRECTION.RIGHT:
+					weapon.enable()
 					animation_player.play("attack_right")
+					await animation_player.animation_finished
+					weapon.disable()
 ### ENDOF player_animation ###
 
 

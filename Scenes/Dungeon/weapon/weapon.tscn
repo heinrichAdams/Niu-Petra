@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://jlsrorbp7qbr"]
+[gd_scene load_steps=4 format=3 uid="uid://jlsrorbp7qbr"]
 
+[ext_resource type="Script" path="res://Scenes/Dungeon/weapon/weapon.gd" id="1_gcp87"]
 [ext_resource type="Texture2D" uid="uid://cp0dgfucd333h" path="res://Art/32x32pixelmeleeweapon.png" id="1_sfmgj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l6fnx"]
@@ -9,6 +10,7 @@ size = Vector2(4, 28)
 scale = Vector2(2, 2)
 collision_layer = 4
 collision_mask = 0
+script = ExtResource("1_gcp87")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1

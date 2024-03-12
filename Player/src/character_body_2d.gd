@@ -19,8 +19,40 @@ var state : STATE = STATE.IDLE
 var direction : DIRECTION = DIRECTION.DOWN
 @onready var animated_sprite_2d : AnimatedSprite2D = $AnimatedSprite2D
 @onready var selected_item = $Camera2D/selected_item
+
+@onready var hotbar_slot_1 = $Camera2D/hotbar/hotbar_slot_1
+@onready var hotbar_slot_2 = $Camera2D/hotbar/hotbar_slot_2
+@onready var hotbar_slot_3 = $Camera2D/hotbar/hotbar_slot_3
+@onready var hotbar_slot_4 = $Camera2D/hotbar/hotbar_slot_4
+
+
 # ENDOF GLOBAL VARS
 
+
+func set_selected_slot(_selected_slot):
+	var selected_slot : int = _selected_slot
+	
+	match selected_slot:
+		1:
+			hotbar_slot_1.self_modulate = Color(0,1,0)
+			hotbar_slot_2.self_modulate = Color(1,1,1)
+			hotbar_slot_3.self_modulate = Color(1,1,1)
+			hotbar_slot_4.self_modulate = Color(1,1,1)
+		2:
+			hotbar_slot_1.self_modulate = Color(1,1,1)
+			hotbar_slot_2.self_modulate = Color(0,1,0)
+			hotbar_slot_3.self_modulate = Color(1,1,1)
+			hotbar_slot_4.self_modulate = Color(1,1,1)
+		3:
+			hotbar_slot_1.self_modulate = Color(1,1,1)
+			hotbar_slot_2.self_modulate = Color(1,1,1)
+			hotbar_slot_3.self_modulate = Color(0,1,0)
+			hotbar_slot_4.self_modulate = Color(1,1,1)
+		4:
+			hotbar_slot_1.self_modulate = Color(1,1,1)
+			hotbar_slot_2.self_modulate = Color(1,1,1)
+			hotbar_slot_3.self_modulate = Color(1,1,1)
+			hotbar_slot_4.self_modulate = Color(0,1,0)
 
 ### _physics_process ###
 func _physics_process(delta):
