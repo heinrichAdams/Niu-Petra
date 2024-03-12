@@ -174,8 +174,16 @@ func plant(tile_pos):
 						can_place_water_tile = tile_data.get_custom_data("can_place_water")
 				
 					if can_place_water_tile:
-						var water_tile : Vector2i = Vector2i(0,1)
-						tile_map.set_cell(ground_layer, tile_pos, tilemap_id, water_tile)
+						#var water_tile : Vector2i = Vector2i(0,1)
+						#tile_map.set_cell(ground_layer, tile_pos, tilemap_id, water_tile)
+						#var affected_tile_list: Array[Vector2i]
+						#for i in tile_map.get_surrounding_cells(tile_pos):
+							#for j in tile_map.get_surrounding_cells(i):
+								#if j == tile_pos: continue
+								#affected_tile_list.append(j)
+						
+						tile_map.erase_cell(ground_layer, tile_pos)
+						#tile_map.set_cells_terrain_connect(ground_layer, affected_tile_list, 0,0,true)
 
 
 # ENDOF PLANT
@@ -196,6 +204,8 @@ func mine(tile_pos):
 			elif crack_level >= 4:
 				tile_map.set_cell(effects_layer, tile_pos, -1)
 				tile_map.set_cell(wall_layer, tile_pos, -1)
+				
+				
 		else:
 			tile_map.set_cell(effects_layer, tile_pos, wall_id, crack_level_atlas[0])
 			

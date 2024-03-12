@@ -1,0 +1,117 @@
+[gd_scene load_steps=17 format=3 uid="uid://gt4ya8c4r0e"]
+
+[ext_resource type="Script" path="res://Scenes/niu/level_objects/fern.gd" id="1_85fu4"]
+[ext_resource type="Texture2D" uid="uid://ev6ef35lq8pk" path="res://Art/CaveFloor/FernsAnimTilemap.png" id="1_gwkne"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mprgm"]
+atlas = ExtResource("1_gwkne")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tsscu"]
+atlas = ExtResource("1_gwkne")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_auv67"]
+atlas = ExtResource("1_gwkne")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jorhr"]
+atlas = ExtResource("1_gwkne")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5gmh"]
+atlas = ExtResource("1_gwkne")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_stkfm"]
+atlas = ExtResource("1_gwkne")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igxy8"]
+atlas = ExtResource("1_gwkne")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bqeff"]
+atlas = ExtResource("1_gwkne")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_756om"]
+atlas = ExtResource("1_gwkne")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4jgfa"]
+atlas = ExtResource("1_gwkne")
+region = Rect2(1152, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_adjrc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mprgm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tsscu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_auv67")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jorhr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5gmh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_stkfm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_igxy8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bqeff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_756om")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4jgfa")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2pug5"]
+radius = 18.0
+height = 48.0
+
+[sub_resource type="Gradient" id="Gradient_ouu5j"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_boctw"]
+gradient = SubResource("Gradient_ouu5j")
+fill = 1
+fill_from = Vector2(0.513967, 0.480447)
+fill_to = Vector2(0.882682, 0.167598)
+
+[node name="Fern" type="Node2D"]
+script = ExtResource("1_85fu4")
+
+[node name="Area2D" type="StaticBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_adjrc")
+frame_progress = 0.0156784
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(1, -14)
+scale = Vector2(1.235, 1.42)
+shape = SubResource("CapsuleShape2D_2pug5")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(1.90735e-06, 2)
+scale = Vector2(4.25, 3.74219)
+color = Color(0.364706, 0.498039, 1, 1)
+energy = 1.88
+texture = SubResource("GradientTexture2D_boctw")

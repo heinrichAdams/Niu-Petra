@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://b24v5ie3ff1io"]
+
+[ext_resource type="Texture2D" uid="uid://b13d4xmmk6bmo" path="res://Art/CaveFloor/decorative.png" id="1_bikfw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0sufj"]
+atlas = ExtResource("1_bikfw")
+region = Rect2(0, 0, 94, 137)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v26pc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0sufj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5elch"]
+
+[node name="stalectite" type="Node2D"]
+
+[node name="Area2D" type="StaticBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Area2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_v26pc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3.3, 15.01)
+scale = Vector2(4.505, 3.12)
+shape = SubResource("CapsuleShape2D_5elch")

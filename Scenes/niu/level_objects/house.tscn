@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctuvu51s1yhe2"]
+
+[ext_resource type="Texture2D" uid="uid://sqq3igo70xrc" path="res://Art/CaveFloor/MainLev2.0.png" id="1_20gc8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvmpc"]
+atlas = ExtResource("1_20gc8")
+region = Rect2(216, 708, 108, 118)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ex3p5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvmpc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="house" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+
+[node name="cave_entrance" type="AnimatedSprite2D" parent="Area2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_ex3p5")

@@ -15,6 +15,16 @@
 [ext_resource type="Texture2D" uid="uid://cru7xwnsjtt2j" path="res://Art/CaveFloor/CaveFloorTilemap.png" id="12_7dgpe"]
 [ext_resource type="Texture2D" uid="uid://cp0dgfucd333h" path="res://Art/32x32pixelmeleeweapon.png" id="13_icniv"]
 
+[sub_resource type="Gradient" id="Gradient_jrnwh"]
+offsets = PackedFloat32Array(0, 0.693548)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_5282o"]
+gradient = SubResource("Gradient_jrnwh")
+use_hdr = true
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l3xu0"]
 radius = 5.5
 height = 24.0
@@ -286,16 +296,6 @@ animations = [{
 "speed": 7.0
 }]
 
-[sub_resource type="Gradient" id="Gradient_jrnwh"]
-offsets = PackedFloat32Array(0, 0.693548)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_5282o"]
-gradient = SubResource("Gradient_jrnwh")
-use_hdr = true
-fill = 1
-fill_from = Vector2(0.5, 0.5)
-
 [sub_resource type="Gradient" id="Gradient_r0pt3"]
 offsets = PackedFloat32Array(0, 0.989744)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -315,6 +315,14 @@ shadow_offset = Vector2(3, 3)
 [node name="Player_Main_Map" type="CharacterBody2D"]
 script = ExtResource("1_y8ivw")
 
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.733333, 0.690196, 0.509804, 1)
+energy = 0.74
+shadow_enabled = true
+shadow_color = Color(0.0117647, 0.0117647, 0.0156863, 0.00392157)
+texture = SubResource("GradientTexture2D_5282o")
+texture_scale = 5.54
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(2, 2.5)
 shape = SubResource("CapsuleShape2D_l3xu0")
@@ -324,18 +332,9 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_itd00")
 animation = &"run_up"
 
-[node name="PointLight2D" type="PointLight2D" parent="."]
-color = Color(0.733333, 0.690196, 0.509804, 1)
-energy = 0.74
-shadow_enabled = true
-shadow_color = Color(0.0117647, 0.0117647, 0.0156863, 0.00392157)
-texture = SubResource("GradientTexture2D_5282o")
-texture_scale = 5.54
-
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 z_index = -220
 y_sort_enabled = true
-color = Color(0.278431, 0.278431, 0.278431, 1)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 z_index = 145
