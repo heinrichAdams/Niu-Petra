@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://1acl2b0qxhj2"]
+
+[ext_resource type="Texture2D" uid="uid://cc3iahvvjxshu" path="res://Art/Dungeon/DungeonTilemap.png" id="1_0wfv0"]
+[ext_resource type="Script" path="res://Scenes/niu/level_objects/star_item.gd" id="1_1ii0n"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8bwh6"]
+radius = 20.025
+
+[node name="star_item" type="Area2D"]
+script = ExtResource("1_1ii0n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_0wfv0")
+hframes = 11
+vframes = 8
+frame = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_8bwh6")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

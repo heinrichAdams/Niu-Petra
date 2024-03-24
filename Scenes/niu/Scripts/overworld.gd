@@ -202,8 +202,17 @@ func mine(tile_pos):
 			if crack_level < 4:
 				tile_map.set_cell(effects_layer, tile_pos, wall_id, crack_level_atlas[crack_level])
 			elif crack_level >= 4:
-				tile_map.set_cell(effects_layer, tile_pos, -1)
-				tile_map.set_cell(wall_layer, tile_pos, -1)
+				var affected_tile_list: Array[Vector2i]
+				for i in tile_map.get_surrounding_cells(tile_pos):
+					for j in tile_map.get_surrounding_cells(i):
+						if j == tile_pos: continue
+						affected_tile_list.append(j)
+				
+				
+				tile_map.erase_cell(effects_layer, tile_pos)
+				#tile_map.erase_cell(wall_layer, tile_pos)
+				BetterTerrain.set_cell(tile_map, wall_layer, tile_pos, -1)
+				BetterTerrain.update_terrain_cells(tile_map, wall_layer, affected_tile_list)
 				
 				
 		else:

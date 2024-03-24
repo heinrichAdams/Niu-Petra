@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://c4gohjylv3mqa"]
+
+[ext_resource type="Texture2D" uid="uid://cc3iahvvjxshu" path="res://Art/Dungeon/DungeonTilemap.png" id="1_5sxxy"]
+
+[sub_resource type="Gradient" id="Gradient_4w5mv"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ka7he"]
+gradient = SubResource("Gradient_4w5mv")
+fill = 1
+fill_from = Vector2(0.49162, 0.502793)
+fill_to = Vector2(0.888268, 0.223464)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5isgh"]
+size = Vector2(46, 62)
+
+[node name="dungeon_portal" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_5sxxy")
+hframes = 11
+vframes = 8
+frame = 1
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.615686, 0.313726, 1, 1)
+energy = 1.88
+texture = SubResource("GradientTexture2D_ka7he")
+texture_scale = 5.39
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_5isgh")

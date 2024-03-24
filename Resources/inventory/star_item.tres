@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://bnmwqo5t65bsw"]
+
+[ext_resource type="Texture2D" uid="uid://ca1ec32idfyvc" path="res://PLACEHOLDER_ART/apple-icon.png" id="1_yh7en"]
+[ext_resource type="Script" path="res://Resources/inventory/inventory_item.gd" id="2_rseks"]
+
+[resource]
+script = ExtResource("2_rseks")
+name = "star"
+image = ExtResource("1_yh7en")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=54 format=3 uid="uid://bnws40ftmi68d"]
+[gd_scene load_steps=56 format=3 uid="uid://bnws40ftmi68d"]
 
 [ext_resource type="Texture2D" uid="uid://bly2soiytbhkk" path="res://Art/Character/Character Spritesheets/SpriteSheet - Front Idle.png" id="1_bntf0"]
 [ext_resource type="Script" path="res://Player/src/character_body_2d.gd" id="1_y8ivw"]
+[ext_resource type="Resource" uid="uid://dpw1eo4paggsj" path="res://Resources/inventory/player_inventory.tres" id="2_2shbj"]
 [ext_resource type="Texture2D" uid="uid://bn0youfjjmpcb" path="res://Art/Character/Character Spritesheets/SpriteSheet - Left Idle.png" id="2_yaxed"]
 [ext_resource type="Texture2D" uid="uid://o3o6e2c5vjw6" path="res://Art/Character/Character Spritesheets/SpriteSheet - Right Idle.png" id="3_1oybe"]
 [ext_resource type="Texture2D" uid="uid://cbb8en8br1vvn" path="res://Art/Character/Character Spritesheets/SpriteSheet - Back Idle.png" id="4_ae55t"]
@@ -14,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://bxoqn367ajc7p" path="res://Scenes/niu/UI/Border All 15.png" id="11_jkh5w"]
 [ext_resource type="Texture2D" uid="uid://cru7xwnsjtt2j" path="res://Art/CaveFloor/CaveFloorTilemap.png" id="12_7dgpe"]
 [ext_resource type="Texture2D" uid="uid://cp0dgfucd333h" path="res://Art/32x32pixelmeleeweapon.png" id="13_icniv"]
+[ext_resource type="PackedScene" uid="uid://ceo1wpr7pdfkw" path="res://Resources/inventory/inventory_ui.tscn" id="16_0qryy"]
 
 [sub_resource type="Gradient" id="Gradient_jrnwh"]
 offsets = PackedFloat32Array(0, 0.693548)
@@ -314,6 +316,7 @@ shadow_offset = Vector2(3, 3)
 
 [node name="Player_Main_Map" type="CharacterBody2D"]
 script = ExtResource("1_y8ivw")
+inventory = ExtResource("2_2shbj")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 color = Color(0.733333, 0.690196, 0.509804, 1)
@@ -333,6 +336,7 @@ sprite_frames = SubResource("SpriteFrames_itd00")
 animation = &"run_up"
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 z_index = -220
 y_sort_enabled = true
 
@@ -457,3 +461,13 @@ text = "none"
 label_settings = SubResource("LabelSettings_rkl1s")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="inventory_ui" parent="." instance=ExtResource("16_0qryy")]
+light_mask = 2
+visibility_layer = 2
+z_index = 100
+offset_left = -159.0
+offset_top = -126.0
+offset_right = -77.0
+offset_bottom = -62.0
+scale = Vector2(3.865, 3.865)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://dp0lvg6di7ney"]
+[gd_scene load_steps=22 format=3 uid="uid://dp0lvg6di7ney"]
 
 [ext_resource type="Texture2D" uid="uid://cc3iahvvjxshu" path="res://Art/Dungeon/DungeonTilemap.png" id="1_fo4uk"]
 [ext_resource type="Script" path="res://Scenes/Dungeon/dungeon.gd" id="1_uagv0"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cvjmibd3vy28x" path="res://Scenes/Dungeon/enemy/standard_slime_enemy.tscn" id="5_xa5yq"]
 [ext_resource type="Texture2D" uid="uid://c1e7kxafahvy0" path="res://Art/Dungeon/BackgroundLayer 3.png" id="6_nkq4n"]
 [ext_resource type="Texture2D" uid="uid://d18yvfoe7ao7v" path="res://Art/Dungeon/BackgroundLayer 4.png" id="7_t8dho"]
+[ext_resource type="PackedScene" uid="uid://c4gohjylv3mqa" path="res://Scenes/Dungeon/portal_in_dungeon/dungeon_portal.tscn" id="9_oumr2"]
 [ext_resource type="Script" path="res://Scenes/Dungeon/killbox2.gd" id="10_f0sk5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hvyob"]
@@ -11837,6 +11838,7 @@ fill_to = Vector2(0.98324, 0.0782123)
 script = ExtResource("1_uagv0")
 
 [node name="TileMap" type="TileMap" parent="."]
+texture_filter = 1
 position = Vector2(2, 95)
 tile_set = SubResource("TileSet_bd0am")
 rendering_quadrant_size = 64
@@ -11867,6 +11869,9 @@ shape = SubResource("RectangleShape2D_dpkjd")
 [node name="Player_In_Dungeon" parent="TileMap" instance=ExtResource("2_amd46")]
 position = Vector2(-884, 852)
 
+[node name="dungeon_portal" parent="TileMap" instance=ExtResource("9_oumr2")]
+position = Vector2(3551, 224)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="ParralaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
@@ -11874,6 +11879,7 @@ layer = -128
 
 [node name="ParallaxLayer_1" type="ParallaxLayer" parent="CanvasLayer/ParralaxBackground"]
 modulate = Color(0.615686, 0.615686, 0.615686, 1)
+texture_filter = 1
 motion_scale = Vector2(0, 0)
 
 [node name="layer_1" type="Sprite2D" parent="CanvasLayer/ParralaxBackground/ParallaxLayer_1"]
@@ -11883,6 +11889,7 @@ centered = false
 
 [node name="ParallaxLayer_2" type="ParallaxLayer" parent="CanvasLayer/ParralaxBackground"]
 modulate = Color(0.701961, 0.701961, 0.701961, 1)
+texture_filter = 1
 motion_scale = Vector2(0.25, 0)
 motion_mirroring = Vector2(1214.55, 0)
 
@@ -11892,6 +11899,7 @@ texture = ExtResource("5_u75rv")
 centered = false
 
 [node name="ParallaxLayer_3" type="ParallaxLayer" parent="CanvasLayer/ParralaxBackground"]
+texture_filter = 1
 motion_scale = Vector2(0.5, 0)
 motion_mirroring = Vector2(1214.55, 0)
 
@@ -11901,6 +11909,7 @@ texture = ExtResource("6_nkq4n")
 centered = false
 
 [node name="ParallaxLayer_4" type="ParallaxLayer" parent="CanvasLayer/ParralaxBackground"]
+texture_filter = 1
 motion_scale = Vector2(0.75, 0)
 motion_mirroring = Vector2(1214.55, 0)
 
@@ -11925,3 +11934,4 @@ texture = SubResource("GradientTexture2D_2qy6x")
 [connection signal="area_entered" from="TileMap/killbox" to="TileMap/killbox" method="_on_area_entered"]
 [connection signal="body_entered" from="TileMap/killbox" to="TileMap/Player_In_Dungeon" method="_on_killbox_2_body_entered"]
 [connection signal="killbox_entered" from="TileMap/killbox" to="." method="_on_killbox_2_killbox_entered"]
+[connection signal="body_entered" from="TileMap/dungeon_portal" to="." method="_on_dungeon_portal_body_entered"]

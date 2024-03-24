@@ -25,6 +25,7 @@ var direction : DIRECTION = DIRECTION.DOWN
 @onready var hotbar_slot_3 = $Camera2D/hotbar/hotbar_slot_3
 @onready var hotbar_slot_4 = $Camera2D/hotbar/hotbar_slot_4
 
+@export var inventory: Inventory
 
 # ENDOF GLOBAL VARS
 
