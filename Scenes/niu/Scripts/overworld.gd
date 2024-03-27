@@ -7,7 +7,9 @@ enum SELECTION{
 	SLOT_1,
 	SLOT_2,
 	SLOT_3,
-	SLOT_4
+	SLOT_4,
+	SLOT_5,
+	SLOT_6
 }
 
 var crack_level_atlas = [
@@ -52,7 +54,7 @@ func _input(_event):
 		var mouse_pos = get_global_mouse_position()
 		var tile_mouse_pos = tile_map.local_to_map(mouse_pos)
 		var last_growth_level : int = 2
-		var hotbar_item = player_data.get_hotbar_slot_contents(selected_slot)
+		var hotbar_item = character_body_2d.get_item_at_selected_slot()
 		desired_tile = tile_map.get_cell_atlas_coords(ground_layer,tile_mouse_pos)
 		distance_to_player = target_box.global_position.distance_to(character_body_2d.global_position)
 		
@@ -87,6 +89,14 @@ func _input(_event):
 		selected_slot = SELECTION.SLOT_4
 		character_body_2d.set_selected_slot(4)
 		character_body_2d.set_temporary_hotbar_label(player_data.get_hotbar_slot_contents(selected_slot))
+		
+	if Input.is_action_just_pressed("slot_5"):
+		selected_slot = SELECTION.SLOT_5
+		character_body_2d.set_selected_slot(5)
+		
+	if Input.is_action_just_pressed("slot_6"):
+		selected_slot = SELECTION.SLOT_6
+		character_body_2d.set_selected_slot(6)
 
 # QUICK_SAVE
 func quick_save():
@@ -142,7 +152,7 @@ func quick_load():
 # PLANT
 func plant(tile_pos):
 	
-	var hotbar_item = player_data.get_hotbar_slot_contents(selected_slot)
+	var hotbar_item = character_body_2d.get_item_at_selected_slot()
 	
 	var is_empty_cell : int = tile_map.get_cell_source_id(wall_layer, tile_pos)
 	if is_empty_cell != wall_id:

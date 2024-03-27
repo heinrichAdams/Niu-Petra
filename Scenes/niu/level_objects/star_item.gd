@@ -1,8 +1,8 @@
 extends Area2D
 
 @onready var inventory: Inventory = preload("res://Resources/inventory/player_inventory.tres")
-var item_resource = preload("res://Resources/inventory/star_item.tres")
-
+@export var item: InventoryItem
+var player = null
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -15,9 +15,9 @@ func _process(delta):
 
 func _on_body_entered(body):
 	PersistentPlayerData.add_item_to_inventory("star")
-	for i in inventory.items:
-		if !i:
-			i = item_resource
+	player = body
+	player.collect(item)
+	player.update_hotbar_contents()
 		
 	for i in PersistentPlayerData.player_inventory:
 		print("Item: ", i[0], " Amount: ", i[1])

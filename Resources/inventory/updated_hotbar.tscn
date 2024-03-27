@@ -1,0 +1,133 @@
+[gd_scene load_steps=7 format=3 uid="uid://dtmoij4w1un66"]
+
+[ext_resource type="Script" path="res://Resources/inventory/updated_hotbar.gd" id="1_2x3p1"]
+[ext_resource type="Texture2D" uid="uid://b7l4gnnbly7uw" path="res://Art/UI/UI_Hotbar.png" id="1_y52wg"]
+[ext_resource type="PackedScene" uid="uid://dl3boa386ev50" path="res://Resources/inventory/inventory_ui_slot.tscn" id="2_3m87y"]
+[ext_resource type="Resource" uid="uid://dpw1eo4paggsj" path="res://Resources/inventory/player_inventory.tres" id="2_amylc"]
+[ext_resource type="Texture2D" uid="uid://da14yveh581i6" path="res://Art/Character/RedBox1.png" id="4_icmf5"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_6a5mj"]
+light_mode = 1
+
+[node name="updated_hotbar" type="Control"]
+material = SubResource("CanvasItemMaterial_6a5mj")
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_2x3p1")
+inventory = ExtResource("2_amylc")
+
+[node name="hotbar_image" type="Sprite2D" parent="."]
+texture_filter = 1
+use_parent_material = true
+texture = ExtResource("1_y52wg")
+centered = false
+
+[node name="selected_box" type="Sprite2D" parent="hotbar_image"]
+self_modulate = Color(0, 1, 0, 1)
+z_index = 235
+use_parent_material = true
+position = Vector2(46.878, 62.6715)
+scale = Vector2(0.77175, 0.708506)
+skew = 0.00802696
+texture = ExtResource("4_icmf5")
+
+[node name="inventory_ui_slot" parent="hotbar_image" instance=ExtResource("2_3m87y")]
+use_parent_material = true
+offset_left = 19.0
+offset_top = 33.0
+offset_right = 35.0
+offset_bottom = 49.0
+scale = Vector2(3.43, 3.729)
+metadata/_edit_use_anchors_ = true
+
+[node name="selected_box2" type="Sprite2D" parent="hotbar_image"]
+self_modulate = Color(0, 1, 0, 1)
+z_index = 235
+use_parent_material = true
+position = Vector2(102.878, 62.6715)
+scale = Vector2(0.77175, 0.708506)
+skew = 0.00802696
+texture = ExtResource("4_icmf5")
+
+[node name="inventory_ui_slot2" parent="hotbar_image" instance=ExtResource("2_3m87y")]
+use_parent_material = true
+offset_left = 75.0
+offset_top = 33.0
+offset_right = 91.0
+offset_bottom = 49.0
+scale = Vector2(3.43, 3.729)
+metadata/_edit_use_anchors_ = true
+
+[node name="selected_box3" type="Sprite2D" parent="hotbar_image"]
+self_modulate = Color(0, 1, 0, 1)
+z_index = 235
+use_parent_material = true
+position = Vector2(158.878, 62.6715)
+scale = Vector2(0.77175, 0.708506)
+skew = 0.00802696
+texture = ExtResource("4_icmf5")
+
+[node name="inventory_ui_slot3" parent="hotbar_image" instance=ExtResource("2_3m87y")]
+use_parent_material = true
+offset_left = 131.0
+offset_top = 33.0
+offset_right = 147.0
+offset_bottom = 49.0
+scale = Vector2(3.43, 3.729)
+metadata/_edit_use_anchors_ = true
+
+[node name="selected_box4" type="Sprite2D" parent="hotbar_image"]
+self_modulate = Color(0, 1, 0, 1)
+z_index = 235
+use_parent_material = true
+position = Vector2(214.878, 62.6715)
+scale = Vector2(0.77175, 0.708506)
+skew = 0.00802696
+texture = ExtResource("4_icmf5")
+
+[node name="inventory_ui_slot4" parent="hotbar_image" instance=ExtResource("2_3m87y")]
+use_parent_material = true
+offset_left = 187.0
+offset_top = 33.0
+offset_right = 203.0
+offset_bottom = 49.0
+scale = Vector2(3.43, 3.729)
+metadata/_edit_use_anchors_ = true
+
+[node name="selected_box5" type="Sprite2D" parent="hotbar_image"]
+self_modulate = Color(0, 1, 0, 1)
+z_index = 235
+use_parent_material = true
+position = Vector2(270.878, 62.6715)
+scale = Vector2(0.77175, 0.708506)
+skew = 0.00802696
+texture = ExtResource("4_icmf5")
+
+[node name="inventory_ui_slot5" parent="hotbar_image" instance=ExtResource("2_3m87y")]
+use_parent_material = true
+offset_left = 243.0
+offset_top = 33.0
+offset_right = 259.0
+offset_bottom = 49.0
+scale = Vector2(3.43, 3.729)
+metadata/_edit_use_anchors_ = true
+
+[node name="selected_box6" type="Sprite2D" parent="hotbar_image"]
+self_modulate = Color(0, 1, 0, 1)
+z_index = 235
+use_parent_material = true
+position = Vector2(326.878, 62.6715)
+scale = Vector2(0.77175, 0.708506)
+skew = 0.00802696
+texture = ExtResource("4_icmf5")
+
+[node name="inventory_ui_slot6" parent="hotbar_image" instance=ExtResource("2_3m87y")]
+use_parent_material = true
+offset_left = 299.0
+offset_top = 33.0
+offset_right = 315.0
+offset_bottom = 49.0
+scale = Vector2(3.43, 3.729)
+metadata/_edit_use_anchors_ = true

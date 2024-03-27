@@ -1,13 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://1acl2b0qxhj2"]
+[gd_scene load_steps=5 format=3 uid="uid://1acl2b0qxhj2"]
 
 [ext_resource type="Texture2D" uid="uid://cc3iahvvjxshu" path="res://Art/Dungeon/DungeonTilemap.png" id="1_0wfv0"]
 [ext_resource type="Script" path="res://Scenes/niu/level_objects/star_item.gd" id="1_1ii0n"]
+[ext_resource type="Resource" uid="uid://bnmwqo5t65bsw" path="res://Resources/inventory/star_item.tres" id="2_gjs4i"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8bwh6"]
 radius = 20.025
 
 [node name="star_item" type="Area2D"]
 script = ExtResource("1_1ii0n")
+item = ExtResource("2_gjs4i")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
