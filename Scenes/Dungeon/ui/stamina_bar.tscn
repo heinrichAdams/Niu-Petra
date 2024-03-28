@@ -1,0 +1,234 @@
+[gd_scene load_steps=21 format=3 uid="uid://d1lbdk5afyfop"]
+
+[ext_resource type="Texture2D" uid="uid://dcfhdncbsyx31" path="res://Art/UI/UI_STAMINA_BAR-Sheet.png" id="1_vi016"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gj5r"]
+atlas = ExtResource("1_vi016")
+region = Rect2(3213, 0, 189, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e36fs"]
+atlas = ExtResource("1_vi016")
+region = Rect2(1512, 0, 189, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pv1vo"]
+atlas = ExtResource("1_vi016")
+region = Rect2(1323, 0, 189, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_354eo"]
+atlas = ExtResource("1_vi016")
+region = Rect2(1134, 0, 189, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fk2ao"]
+atlas = ExtResource("1_vi016")
+region = Rect2(945, 0, 189, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1m3w6"]
+atlas = ExtResource("1_vi016")
+region = Rect2(756, 0, 189, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwc7i"]
+atlas = ExtResource("1_vi016")
+region = Rect2(567, 0, 189, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5pjfr"]
+atlas = ExtResource("1_vi016")
+region = Rect2(378, 0, 189, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vq7ad"]
+atlas = ExtResource("1_vi016")
+region = Rect2(189, 0, 189, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_868gx"]
+atlas = ExtResource("1_vi016")
+region = Rect2(0, 0, 189, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rs1q5"]
+atlas = ExtResource("1_vi016")
+region = Rect2(3024, 0, 189, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvocp"]
+atlas = ExtResource("1_vi016")
+region = Rect2(2835, 0, 189, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bnc81"]
+atlas = ExtResource("1_vi016")
+region = Rect2(2646, 0, 189, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_acr32"]
+atlas = ExtResource("1_vi016")
+region = Rect2(2457, 0, 189, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajitr"]
+atlas = ExtResource("1_vi016")
+region = Rect2(2268, 0, 189, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nj5m4"]
+atlas = ExtResource("1_vi016")
+region = Rect2(2079, 0, 189, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ha2ay"]
+atlas = ExtResource("1_vi016")
+region = Rect2(1890, 0, 189, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tlmmy"]
+atlas = ExtResource("1_vi016")
+region = Rect2(1701, 0, 189, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mpq2r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2gj5r")
+}],
+"loop": true,
+"name": &"level_1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e36fs")
+}],
+"loop": true,
+"name": &"level_10",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pv1vo")
+}],
+"loop": true,
+"name": &"level_11",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_354eo")
+}],
+"loop": true,
+"name": &"level_12",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fk2ao")
+}],
+"loop": true,
+"name": &"level_13",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1m3w6")
+}],
+"loop": true,
+"name": &"level_14",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwc7i")
+}],
+"loop": true,
+"name": &"level_15",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5pjfr")
+}],
+"loop": true,
+"name": &"level_16",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vq7ad")
+}],
+"loop": true,
+"name": &"level_17",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_868gx")
+}],
+"loop": true,
+"name": &"level_18",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rs1q5")
+}],
+"loop": true,
+"name": &"level_2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvocp")
+}],
+"loop": true,
+"name": &"level_3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bnc81")
+}],
+"loop": true,
+"name": &"level_4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_acr32")
+}],
+"loop": true,
+"name": &"level_5",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajitr")
+}],
+"loop": true,
+"name": &"level_6",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nj5m4")
+}],
+"loop": true,
+"name": &"level_7",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ha2ay")
+}],
+"loop": true,
+"name": &"level_8",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tlmmy")
+}],
+"loop": true,
+"name": &"level_9",
+"speed": 5.0
+}]
+
+[node name="stamina_bar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="stamina_bar_image" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+use_parent_material = true
+sprite_frames = SubResource("SpriteFrames_mpq2r")
+animation = &"level_18"

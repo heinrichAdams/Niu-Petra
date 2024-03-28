@@ -62,8 +62,8 @@ texture = ExtResource("4_potbf")
 region_rect = Rect2(181, 18, 120, 68)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1p128"]
-texture = ExtResource("4_4m4ff")
-region_rect = Rect2(181, 18, 125, 61)
+texture = ExtResource("4_potbf")
+region_rect = Rect2(181, 18, 120, 68)
 
 [node name="main_menu" type="Control"]
 layout_mode = 3

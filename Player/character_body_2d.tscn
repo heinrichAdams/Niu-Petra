@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://bnws40ftmi68d"]
+[gd_scene load_steps=60 format=3 uid="uid://bnws40ftmi68d"]
 
 [ext_resource type="Texture2D" uid="uid://bly2soiytbhkk" path="res://Art/Character/Character Spritesheets/SpriteSheet - Front Idle.png" id="1_bntf0"]
 [ext_resource type="Script" path="res://Player/src/character_body_2d.gd" id="1_y8ivw"]
@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://cp0dgfucd333h" path="res://Art/32x32pixelmeleeweapon.png" id="13_icniv"]
 [ext_resource type="PackedScene" uid="uid://ceo1wpr7pdfkw" path="res://Resources/inventory/inventory_ui.tscn" id="16_0qryy"]
 [ext_resource type="PackedScene" uid="uid://dtmoij4w1un66" path="res://Resources/inventory/updated_hotbar.tscn" id="17_inuk8"]
+[ext_resource type="PackedScene" uid="uid://c7edoofwbt5fg" path="res://Scenes/niu/UI/xp_bar.tscn" id="18_1nyu3"]
 
 [sub_resource type="Gradient" id="Gradient_jrnwh"]
 offsets = PackedFloat32Array(0, 0.693548)
@@ -318,6 +319,9 @@ shadow_offset = Vector2(3, 3)
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_vc1ap"]
 light_mode = 1
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bg57a"]
+light_mode = 1
+
 [node name="Player_Main_Map" type="CharacterBody2D"]
 script = ExtResource("1_y8ivw")
 inventory = ExtResource("2_2shbj")
@@ -481,3 +485,12 @@ offset_left = 154.0
 offset_top = 177.0
 offset_right = 194.0
 offset_bottom = 217.0
+
+[node name="xp_bar" parent="." instance=ExtResource("18_1nyu3")]
+z_index = 310
+material = SubResource("CanvasItemMaterial_bg57a")
+offset_left = 2.0
+offset_top = -290.0
+offset_right = 42.0
+offset_bottom = -250.0
+scale = Vector2(1.5, 1.5)

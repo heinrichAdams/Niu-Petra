@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://cjn37wwemwwhm"]
+[gd_scene load_steps=47 format=3 uid="uid://cjn37wwemwwhm"]
 
 [ext_resource type="Texture2D" uid="uid://bn0youfjjmpcb" path="res://Art/Character/Character Spritesheets/SpriteSheet - Left Idle.png" id="1_mtses"]
 [ext_resource type="Script" path="res://Scenes/Dungeon/player_in_dungeon.gd" id="1_ut350"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://xpkv7jmsflb3" path="res://Art/Character/Character Spritesheets/SpriteSheet - Right Running.png" id="4_83ch1"]
 [ext_resource type="PackedScene" uid="uid://jlsrorbp7qbr" path="res://Scenes/Dungeon/weapon/weapon.tscn" id="6_vym0q"]
 [ext_resource type="Script" path="res://Scenes/Dungeon/Weapon.gd" id="8_u2my1"]
+[ext_resource type="PackedScene" uid="uid://buv7wsxf084qy" path="res://Scenes/Dungeon/ui/health_bar.tscn" id="10_808x6"]
+[ext_resource type="PackedScene" uid="uid://d1lbdk5afyfop" path="res://Scenes/Dungeon/ui/stamina_bar.tscn" id="11_ni6kw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_huq3n"]
 size = Vector2(27, 62)
@@ -424,6 +426,12 @@ fill = 1
 fill_from = Vector2(0.50838, 0.502793)
 fill_to = Vector2(0.832402, 0.178771)
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_srel3"]
+light_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_82hfm"]
+light_mode = 1
+
 [node name="Player_In_Dungeon" type="CharacterBody2D"]
 collision_mask = 3
 script = ExtResource("1_ut350")
@@ -464,5 +472,21 @@ debug_color = Color(0, 0.647059, 0.168627, 0.419608)
 color = Color(0.721569, 0.376471, 0, 1)
 texture = SubResource("GradientTexture2D_he7u0")
 texture_scale = 7.05
+
+[node name="health_bar" parent="." instance=ExtResource("10_808x6")]
+material = SubResource("CanvasItemMaterial_srel3")
+offset_left = -377.0
+offset_top = -249.0
+offset_right = -337.0
+offset_bottom = -209.0
+scale = Vector2(1.39, 1.39)
+
+[node name="stamina_bar" parent="." instance=ExtResource("11_ni6kw")]
+material = SubResource("CanvasItemMaterial_82hfm")
+offset_left = -395.0
+offset_top = -215.0
+offset_right = -355.0
+offset_bottom = -175.0
+scale = Vector2(1.175, 1.175)
 
 [connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
