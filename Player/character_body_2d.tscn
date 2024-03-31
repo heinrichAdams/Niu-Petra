@@ -327,6 +327,7 @@ script = ExtResource("1_y8ivw")
 inventory = ExtResource("2_2shbj")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
 color = Color(0.733333, 0.690196, 0.509804, 1)
 energy = 0.74
 shadow_enabled = true
@@ -348,6 +349,7 @@ z_index = 145
 y_sort_enabled = true
 
 [node name="hotbar" type="VBoxContainer" parent="Camera2D"]
+visible = false
 z_index = 100
 offset_left = -133.0
 offset_top = 214.0
@@ -457,6 +459,7 @@ frame = 26
 visible = false
 
 [node name="selected_item" type="Label" parent="Camera2D"]
+visible = false
 offset_left = -556.0
 offset_top = -308.0
 offset_right = -399.0
@@ -470,10 +473,10 @@ vertical_alignment = 1
 light_mask = 4
 visibility_layer = 4
 z_index = 310
-offset_left = -196.0
-offset_top = -147.0
-offset_right = -114.0
-offset_bottom = -83.0
+offset_left = -223.0
+offset_top = -236.0
+offset_right = -141.0
+offset_bottom = -172.0
 scale = Vector2(3.865, 3.865)
 
 [node name="updated_hotbar" parent="." instance=ExtResource("17_inuk8")]
@@ -481,10 +484,10 @@ light_mask = 4
 visibility_layer = 4
 z_index = 295
 material = SubResource("CanvasItemMaterial_vc1ap")
-offset_left = 154.0
-offset_top = 177.0
-offset_right = 194.0
-offset_bottom = 217.0
+offset_left = -187.0
+offset_top = 178.0
+offset_right = -147.0
+offset_bottom = 218.0
 
 [node name="xp_bar" parent="." instance=ExtResource("18_1nyu3")]
 z_index = 310

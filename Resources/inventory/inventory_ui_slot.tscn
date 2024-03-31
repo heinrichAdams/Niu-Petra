@@ -36,6 +36,7 @@ layout_mode = 2
 
 [node name="item_image" type="Sprite2D" parent="CenterContainer/Panel"]
 use_parent_material = true
+scale = Vector2(0.23, 0.23)
 
 [node name="Label" type="Label" parent="CenterContainer/Panel"]
 texture_filter = 1
@@ -48,3 +49,6 @@ offset_right = 37.0
 offset_bottom = 25.0
 scale = Vector2(0.25, 0.25)
 horizontal_alignment = 2
+
+[connection signal="mouse_entered" from="CenterContainer/Panel" to="." method="_on_panel_mouse_entered"]
+[connection signal="mouse_exited" from="CenterContainer/Panel" to="." method="_on_panel_mouse_exited"]

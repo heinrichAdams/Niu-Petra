@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1v7p5ei07pj7"]
+
+[ext_resource type="Texture2D" uid="uid://ba3muu4clqmw5" path="res://Art/UI/Boxes/UI_ITEMCARD.png" id="1_0iwx2"]
+[ext_resource type="Script" path="res://Resources/inventory/item_card.gd" id="1_f3f8w"]
+[ext_resource type="Texture2D" uid="uid://csusdyg6f8qj7" path="res://Art/UI/UI_INVENTORY_SINGLESLOT.png" id="2_hxpie"]
+
+[node name="item_card" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_f3f8w")
+
+[node name="card_background" type="Sprite2D" parent="."]
+texture_filter = 1
+use_parent_material = true
+texture = ExtResource("1_0iwx2")
+centered = false
+
+[node name="item_image_background" type="Sprite2D" parent="."]
+texture_filter = 1
+use_parent_material = true
+position = Vector2(96, 92)
+texture = ExtResource("2_hxpie")
+
+[node name="item_image" type="Sprite2D" parent="item_image_background"]
+use_parent_material = true
+
+[node name="title" type="Label" parent="."]
+texture_filter = 1
+use_parent_material = true
+layout_mode = 0
+offset_left = 77.0
+offset_top = 155.0
+offset_right = 117.0
+offset_bottom = 178.0
+text = "Title"
+horizontal_alignment = 1

@@ -47,7 +47,6 @@ func _ready():
 func _process(delta):
 	pass
 
-
 func _input(_event):
 	
 	if Input.is_action_just_pressed("LMB_click"):
@@ -237,3 +236,6 @@ func _on_portal_portal_entered():
 	quick_save()
 	get_tree().change_scene_to_file("res://Scenes/Dungeon/dungeon.tscn")
 	pass # Replace with function body.
+
+
+	

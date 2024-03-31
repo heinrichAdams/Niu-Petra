@@ -1,0 +1,154 @@
+[gd_scene load_steps=13 format=3 uid="uid://bi0m4ctsbacuv"]
+
+[ext_resource type="Script" path="res://Scenes/niu/level_objects/pickaxe_item.gd" id="1_3k5yd"]
+[ext_resource type="Texture2D" uid="uid://xhg8ik04fk1f" path="res://Art/UI/Icons/UI_ICONS_pickaxe.png" id="1_vikho"]
+[ext_resource type="Resource" uid="uid://c3hxom3qba0qo" path="res://Resources/inventory/pickaxe_item.tres" id="2_jyrp6"]
+[ext_resource type="Texture2D" uid="uid://d2oucwm6utsyi" path="res://Art/UI/Boxes/UI_framed_ITEMCARD-export.png" id="4_qawtp"]
+[ext_resource type="FontFile" uid="uid://drbocs0rjxrgx" path="res://Fonts/PixelifySans-VariableFont_wght.ttf" id="5_w5ttc"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_088ev"]
+
+[sub_resource type="Gradient" id="Gradient_aiwmn"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_j8sfx"]
+gradient = SubResource("Gradient_aiwmn")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.877729, 0.209607)
+
+[sub_resource type="Animation" id="Animation_irk7s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.645, 0.645)]
+}
+
+[sub_resource type="Animation" id="Animation_rkpkt"]
+resource_name = "item_animation"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.645, 0.645), Vector2(0.835, 0.835), Vector2(0.99, 0.99), Vector2(0.775, 0.775), Vector2(0.645, 0.645)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pfg3u"]
+_data = {
+"RESET": SubResource("Animation_irk7s"),
+"item_animation": SubResource("Animation_rkpkt")
+}
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_bq21w"]
+light_mode = 1
+
+[node name="pickaxe_item" type="Area2D"]
+script = ExtResource("1_3k5yd")
+item = ExtResource("2_jyrp6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.645, 0.645)
+texture = ExtResource("1_vikho")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(1.875, 1.875)
+shape = SubResource("RectangleShape2D_088ev")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
+color = Color(1, 0.917647, 0, 1)
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_j8sfx")
+texture_scale = 3.27
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pfg3u")
+}
+
+[node name="item_card" type="Sprite2D" parent="."]
+visible = false
+z_index = 275
+texture_filter = 1
+material = SubResource("CanvasItemMaterial_bq21w")
+position = Vector2(126, -3)
+texture = ExtResource("4_qawtp")
+
+[node name="item_card_image" type="Sprite2D" parent="item_card"]
+use_parent_material = true
+position = Vector2(-6, -72)
+texture = ExtResource("1_vikho")
+
+[node name="title" type="Label" parent="item_card"]
+texture_filter = 3
+use_parent_material = true
+offset_left = -43.0
+offset_top = -37.0
+offset_right = 32.0
+offset_bottom = -11.0
+theme_override_colors/font_color = Color(1, 0.811765, 0.698039, 1)
+theme_override_fonts/font = ExtResource("5_w5ttc")
+theme_override_font_sizes/font_size = 21
+text = "Pickaxe"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="rarity" type="Label" parent="item_card"]
+texture_filter = 3
+use_parent_material = true
+offset_left = -62.0
+offset_top = -9.0
+offset_right = 5.0
+offset_bottom = 14.0
+theme_override_fonts/font = ExtResource("5_w5ttc")
+theme_override_font_sizes/font_size = 14
+text = "rarity: "
+metadata/_edit_use_anchors_ = true
+
+[node name="rarity_level" type="Label" parent="item_card"]
+texture_filter = 3
+use_parent_material = true
+offset_left = -8.0
+offset_top = -10.0
+offset_right = 54.0
+offset_bottom = 13.0
+theme_override_colors/font_color = Color(1, 0.811765, 0.698039, 1)
+theme_override_fonts/font = ExtResource("5_w5ttc")
+theme_override_font_sizes/font_size = 16
+text = "common"
+metadata/_edit_use_anchors_ = true
+
+[node name="description" type="Label" parent="item_card"]
+use_parent_material = true
+offset_left = -93.0
+offset_top = 21.0
+offset_right = 87.0
+offset_bottom = 87.0
+theme_override_fonts/font = ExtResource("5_w5ttc")
+theme_override_font_sizes/font_size = 12
+text = "An old, rusty pickaxe. 
+It looks like it's 
+sturdy enough. "
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

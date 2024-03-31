@@ -483,10 +483,10 @@ scale = Vector2(1.39, 1.39)
 
 [node name="stamina_bar" parent="." instance=ExtResource("11_ni6kw")]
 material = SubResource("CanvasItemMaterial_82hfm")
-offset_left = -395.0
+offset_left = -377.0
 offset_top = -215.0
-offset_right = -355.0
+offset_right = -337.0
 offset_bottom = -175.0
-scale = Vector2(1.175, 1.175)
+scale = Vector2(1.39, 1.39)
 
 [connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]

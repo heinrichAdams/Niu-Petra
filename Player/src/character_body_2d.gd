@@ -31,37 +31,19 @@ var selected_hotbar_slot : int
 
 @export var inventory: Inventory
 
+
+
 # ENDOF GLOBAL VARS
 
 func _ready():
 	inventory.update.connect(update_hotbar_contents)
+	
 
 func set_selected_slot(_selected_slot):
 	var selected_slot : int = _selected_slot
 	selected_hotbar_slot = _selected_slot
 	updated_hotbar.selected_slot(_selected_slot)
 	
-	match selected_slot:
-		1:
-			hotbar_slot_1.self_modulate = Color(0,1,0)
-			hotbar_slot_2.self_modulate = Color(1,1,1)
-			hotbar_slot_3.self_modulate = Color(1,1,1)
-			hotbar_slot_4.self_modulate = Color(1,1,1)
-		2:
-			hotbar_slot_1.self_modulate = Color(1,1,1)
-			hotbar_slot_2.self_modulate = Color(0,1,0)
-			hotbar_slot_3.self_modulate = Color(1,1,1)
-			hotbar_slot_4.self_modulate = Color(1,1,1)
-		3:
-			hotbar_slot_1.self_modulate = Color(1,1,1)
-			hotbar_slot_2.self_modulate = Color(1,1,1)
-			hotbar_slot_3.self_modulate = Color(0,1,0)
-			hotbar_slot_4.self_modulate = Color(1,1,1)
-		4:
-			hotbar_slot_1.self_modulate = Color(1,1,1)
-			hotbar_slot_2.self_modulate = Color(1,1,1)
-			hotbar_slot_3.self_modulate = Color(1,1,1)
-			hotbar_slot_4.self_modulate = Color(0,1,0)
 
 ### _physics_process ###
 func _physics_process(delta):
@@ -139,3 +121,4 @@ func get_item_at_selected_slot():
 func update_hotbar_contents():
 	print("UPDATE SUCCESFULLY DETECTED, NO IDEA WHY THIS SHIT DONT WORK")
 	updated_hotbar.update_hotbar_slots()
+
