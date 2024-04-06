@@ -32,6 +32,7 @@ const tilemap_id : int = 3
 const wall_id : int = 4
 var desired_tile : Vector2i = Vector2i(0,0)
 var distance_to_player = 0
+var isPaused : bool = false
 
 var can_place_grass_tile = 0
 var can_place_flower_tile = 0
@@ -96,6 +97,8 @@ func _input(_event):
 	if Input.is_action_just_pressed("slot_6"):
 		selected_slot = SELECTION.SLOT_6
 		character_body_2d.set_selected_slot(6)
+	
+	pause_menu()
 
 # QUICK_SAVE
 func quick_save():
@@ -238,4 +241,11 @@ func _on_portal_portal_entered():
 	pass # Replace with function body.
 
 
-	
+func pause_menu():
+	if Input.is_action_just_pressed("pause"):
+		if isPaused:
+			get_tree().paused = false
+			isPaused = false
+		else:
+			get_tree().paused = true
+			isPaused = true

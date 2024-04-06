@@ -18,6 +18,8 @@ const speed : int = 200
 var state : STATE = STATE.IDLE
 var direction : DIRECTION = DIRECTION.DOWN
 var selected_hotbar_slot : int 
+var menu_visible : bool = false
+
 @onready var animated_sprite_2d : AnimatedSprite2D = $AnimatedSprite2D
 @onready var selected_item = $Camera2D/selected_item
 
@@ -28,16 +30,13 @@ var selected_hotbar_slot : int
 
 @onready var updated_hotbar = $updated_hotbar
 
-
 @export var inventory: Inventory
-
-
 
 # ENDOF GLOBAL VARS
 
 func _ready():
 	inventory.update.connect(update_hotbar_contents)
-	
+
 
 func set_selected_slot(_selected_slot):
 	var selected_slot : int = _selected_slot
@@ -121,4 +120,6 @@ func get_item_at_selected_slot():
 func update_hotbar_contents():
 	print("UPDATE SUCCESFULLY DETECTED, NO IDEA WHY THIS SHIT DONT WORK")
 	updated_hotbar.update_hotbar_slots()
+
+
 
