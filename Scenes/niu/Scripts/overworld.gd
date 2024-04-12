@@ -27,6 +27,17 @@ var selected_slot : SELECTION = SELECTION.SLOT_1
 @onready var tile_map = $TileMap
 @onready var bgm = $bgm
 
+const ADJACENT_VECTORS = [
+	Vector2i(0,1), 
+	Vector2i(0,-1), 
+	Vector2i(1,0), 
+	Vector2i(-1,0), 
+	Vector2i(1,1), 
+	Vector2i(1,-1), 
+	Vector2i(-1,1),
+	Vector2i(-1,-1)
+	]
+
 const ground_layer : int = 1
 const wall_layer : int = 3
 const effects_layer : int = 5
@@ -216,18 +227,17 @@ func mine(tile_pos):
 			if crack_level < 4:
 				tile_map.set_cell(effects_layer, tile_pos, wall_id, crack_level_atlas[crack_level])
 			elif crack_level >= 4:
-				var affected_tile_list: Array[Vector2i]
-				for i in tile_map.get_surrounding_cells(tile_pos):
-					for j in tile_map.get_surrounding_cells(i):
-						if j == tile_pos: continue
-						affected_tile_list.append(j)
-				
-				
-				tile_map.erase_cell(effects_layer, tile_pos)
+				#var affected_tile_list: Array[Vector2i]
+				#for i in tile_map.get_surrounding_cells(tile_pos):
+				#	for j in tile_map.get_surrounding_cells(i):
+				#		if j == tile_pos: continue
+				#		affected_tile_list.append(j)
+						
+				#tile_map.erase_cell(effects_layer, tile_pos)
 				#tile_map.erase_cell(wall_layer, tile_pos)
-				BetterTerrain.set_cell(tile_map, wall_layer, tile_pos, -1)
-				BetterTerrain.update_terrain_cells(tile_map, wall_layer, affected_tile_list)
-				
+				#BetterTerrain.set_cell(tile_map, wall_layer, tile_pos, -1)
+				#BetterTerrain.update_terrain_cells(tile_map, wall_layer, affected_tile_list)
+				clear_cell_from_position(tile_pos)
 				
 		else:
 			tile_map.set_cell(effects_layer, tile_pos, wall_id, crack_level_atlas[0])
@@ -255,3 +265,20 @@ func pause_menu():
 
 func _on_bgm_finished():
 	bgm.play()
+
+func clear_cell_from_position(position):
+	#var cell = tile_map.local_to_map(position)
+	#if cell != null:
+		var cells_to_be_updated = []
+		#tile_map.set_cell(wall_layer, position, wall_id, Vector2i(-1,-1))
+		#tile_map.set_cell(effects_layer, position, wall_id, Vector2i(-1,-1))
+		
+		##tile_map.erase_cell(wall_layer, position)
+		for neighboring_cell in ADJACENT_VECTORS:
+			if tile_map.get_cell_tile_data(wall_layer, position + neighboring_cell) != null:
+				cells_to_be_updated.append(position + neighboring_cell)
+		
+		#tile_map.set_cells_terrain_connect(wall_layer, cells_to_be_updated, 1, 0, true)
+		BetterTerrain.set_cell(tile_map, wall_layer, position, -1)
+		BetterTerrain.update_terrain_cells(tile_map, wall_layer, cells_to_be_updated)
+		tile_map.erase_cell(effects_layer, position)
