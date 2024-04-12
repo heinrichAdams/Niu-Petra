@@ -25,6 +25,8 @@ var selected_slot : SELECTION = SELECTION.SLOT_1
 @onready var character_body_2d = $CharacterBody2D
 @onready var target_box = $TargetBox
 @onready var tile_map = $TileMap
+@onready var bgm = $bgm
+
 const ground_layer : int = 1
 const wall_layer : int = 3
 const effects_layer : int = 5
@@ -249,3 +251,7 @@ func pause_menu():
 		else:
 			get_tree().paused = true
 			isPaused = true
+			
+
+func _on_bgm_finished():
+	bgm.play()

@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://buv7wsxf084qy"]
+[gd_scene load_steps=22 format=3 uid="uid://buv7wsxf084qy"]
 
 [ext_resource type="Texture2D" uid="uid://cukfxx3vufwlw" path="res://Art/UI/UI_HEALTH_BAR-Sheet.png" id="1_qnxqj"]
+[ext_resource type="Script" path="res://Scenes/Dungeon/ui/health_bar.gd" id="1_qnydo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tuxu1"]
 atlas = ExtResource("1_qnxqj")
@@ -226,6 +227,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_qnydo")
 
 [node name="health_bar_image" type="AnimatedSprite2D" parent="."]
 texture_filter = 1

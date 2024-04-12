@@ -1,6 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://d1lbdk5afyfop"]
+[gd_scene load_steps=22 format=3 uid="uid://d1lbdk5afyfop"]
 
 [ext_resource type="Texture2D" uid="uid://dcfhdncbsyx31" path="res://Art/UI/UI_STAMINA_BAR-Sheet.png" id="1_vi016"]
+[ext_resource type="Script" path="res://Scenes/Dungeon/ui/stamina_bar.gd" id="1_w8ol7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2gj5r"]
 atlas = ExtResource("1_vi016")
@@ -226,9 +227,10 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+script = ExtResource("1_w8ol7")
 
 [node name="stamina_bar_image" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_mpq2r")
-animation = &"level_18"
+animation = &"level_16"
