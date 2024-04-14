@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=3 format=3 uid="uid://ct471ou5t62s3"]
+
+[ext_resource type="Texture2D" uid="uid://ctwaaxltlfogt" path="res://Art/NPC/NPC_icon.png" id="1_ryoh4"]
+[ext_resource type="Script" path="res://Resources/inventory/inventory_item.gd" id="2_10up0"]
+
+[resource]
+script = ExtResource("2_10up0")
+name = "npc"
+image = ExtResource("1_ryoh4")

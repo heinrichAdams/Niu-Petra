@@ -1,6 +1,5 @@
 extends Area2D
 
-
 @onready var inventory: Inventory = preload("res://Resources/inventory/player_inventory.tres")
 @export var item: InventoryItem
 @export var inDungeon : bool 
@@ -20,7 +19,7 @@ func _process(delta):
 
 
 func _on_body_entered(body):
-	PersistentPlayerData.add_item_to_inventory("grass")
+	PersistentPlayerData.add_item_to_inventory("npc_seed")
 	player = body
 	player.collect(item)
 	if !inDungeon:

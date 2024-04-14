@@ -29,8 +29,7 @@ self_modulate = Color(0, 1, 0, 1)
 z_index = 235
 use_parent_material = true
 position = Vector2(46.878, 62.6715)
-scale = Vector2(0.77175, 0.708506)
-skew = 0.00802696
+scale = Vector2(0.757, 0.799)
 texture = ExtResource("4_icmf5")
 
 [node name="inventory_ui_slot" parent="hotbar_image" instance=ExtResource("2_3m87y")]
@@ -47,8 +46,7 @@ self_modulate = Color(0, 1, 0, 1)
 z_index = 235
 use_parent_material = true
 position = Vector2(102.878, 62.6715)
-scale = Vector2(0.77175, 0.708506)
-skew = 0.00802696
+scale = Vector2(0.757, 0.799)
 texture = ExtResource("4_icmf5")
 
 [node name="inventory_ui_slot2" parent="hotbar_image" instance=ExtResource("2_3m87y")]
@@ -65,8 +63,7 @@ self_modulate = Color(0, 1, 0, 1)
 z_index = 235
 use_parent_material = true
 position = Vector2(158.878, 62.6715)
-scale = Vector2(0.77175, 0.708506)
-skew = 0.00802696
+scale = Vector2(0.757, 0.799)
 texture = ExtResource("4_icmf5")
 
 [node name="inventory_ui_slot3" parent="hotbar_image" instance=ExtResource("2_3m87y")]
@@ -83,8 +80,7 @@ self_modulate = Color(0, 1, 0, 1)
 z_index = 235
 use_parent_material = true
 position = Vector2(214.878, 62.6715)
-scale = Vector2(0.77175, 0.708506)
-skew = 0.00802696
+scale = Vector2(0.757, 0.799)
 texture = ExtResource("4_icmf5")
 
 [node name="inventory_ui_slot4" parent="hotbar_image" instance=ExtResource("2_3m87y")]
@@ -101,8 +97,7 @@ self_modulate = Color(0, 1, 0, 1)
 z_index = 235
 use_parent_material = true
 position = Vector2(270.878, 62.6715)
-scale = Vector2(0.77175, 0.708506)
-skew = 0.00802696
+scale = Vector2(0.757, 0.799)
 texture = ExtResource("4_icmf5")
 
 [node name="inventory_ui_slot5" parent="hotbar_image" instance=ExtResource("2_3m87y")]
@@ -119,8 +114,7 @@ self_modulate = Color(0, 1, 0, 1)
 z_index = 235
 use_parent_material = true
 position = Vector2(326.878, 62.6715)
-scale = Vector2(0.77175, 0.708506)
-skew = 0.00802696
+scale = Vector2(0.757, 0.799)
 texture = ExtResource("4_icmf5")
 
 [node name="inventory_ui_slot6" parent="hotbar_image" instance=ExtResource("2_3m87y")]

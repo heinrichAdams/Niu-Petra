@@ -21,6 +21,8 @@ var crack_level_atlas = [
 
 var selected_slot : SELECTION = SELECTION.SLOT_1
 
+var npc = preload("res://Scenes/niu/npc/grown_npc.tscn")
+
 @onready var player_data = $PlayerData
 @onready var character_body_2d = $CharacterBody2D
 @onready var target_box = $TargetBox
@@ -181,6 +183,8 @@ func plant(tile_pos):
 					if can_place_grass_tile:
 						var grass_tile : Vector2i = Vector2i(desired_tile.x,desired_tile.y + 4)
 						tile_map.set_cell(ground_layer, tile_pos, tilemap_id, grass_tile)
+						character_body_2d.play_planting_animation()
+						PersistentPlayerData.add_xp(1)
 			
 			"flower":
 				if distance_to_player < 150:
@@ -192,6 +196,8 @@ func plant(tile_pos):
 						print("placed flower")
 						var flower_tile : Vector2i = Vector2i(desired_tile.x,desired_tile.y + 4)
 						tile_map.set_cell(ground_layer, tile_pos, tilemap_id, flower_tile)
+						character_body_2d.play_planting_animation()
+						PersistentPlayerData.add_xp(1)
 			"water":
 				if distance_to_player < 150:
 					var tile_data : TileData = tile_map.get_cell_tile_data(ground_layer, tile_pos)
@@ -209,7 +215,20 @@ func plant(tile_pos):
 						
 						tile_map.erase_cell(ground_layer, tile_pos)
 						#tile_map.set_cells_terrain_connect(ground_layer, affected_tile_list, 0,0,true)
-
+			"npc":
+				if distance_to_player < 150:
+					var tile_data : TileData = tile_map.get_cell_tile_data(ground_layer, tile_pos)
+					if tile_data:
+						can_place_grass_tile = tile_data.get_custom_data("can_place_grass")
+				
+					if can_place_grass_tile:
+						print("placed npc")
+						var npc_instance = npc.instantiate()
+						npc_instance.global_position.y = get_global_mouse_position().y
+						npc_instance.global_position.x = get_global_mouse_position().x
+						add_child(npc_instance)
+						character_body_2d.play_planting_animation()
+						PersistentPlayerData.add_xp(1)
 
 # ENDOF PLANT
 
@@ -217,6 +236,7 @@ func plant(tile_pos):
 func mine(tile_pos):
 	var is_valid_cell : bool = (tile_map.get_cell_source_id(wall_layer, tile_pos)) == wall_id
 	if is_valid_cell and (distance_to_player < 150):
+		character_body_2d.play_mining_animation()
 		print("valid wall cell")
 		var wall_tile_data : TileData = tile_map.get_cell_tile_data(wall_layer, tile_pos)
 		var has_effect : bool = (tile_map.get_cell_source_id(effects_layer, tile_pos)) == wall_id
@@ -238,6 +258,7 @@ func mine(tile_pos):
 				#BetterTerrain.set_cell(tile_map, wall_layer, tile_pos, -1)
 				#BetterTerrain.update_terrain_cells(tile_map, wall_layer, affected_tile_list)
 				clear_cell_from_position(tile_pos)
+				PersistentPlayerData.add_xp(2)
 				
 		else:
 			tile_map.set_cell(effects_layer, tile_pos, wall_id, crack_level_atlas[0])

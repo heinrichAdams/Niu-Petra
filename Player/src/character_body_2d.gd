@@ -3,7 +3,9 @@ extends CharacterBody2D
 # ENUMS
 enum STATE{
 	RUN,
-	IDLE
+	IDLE,
+	PLANT,
+	MINE
 }
 enum DIRECTION{
 	UP,
@@ -28,14 +30,27 @@ var menu_visible : bool = false
 @onready var hotbar_slot_3 = $Camera2D/hotbar/hotbar_slot_3
 @onready var hotbar_slot_4 = $Camera2D/hotbar/hotbar_slot_4
 
+@onready var action_timer = $action_timer
+
 @onready var updated_hotbar = $updated_hotbar
 
+@onready var xp_bar = $xp_bar
+
+@onready var level_number = $level_number
+
+
 @export var inventory: Inventory
+
+var isMiningAnimationFinished : bool = true
+
+var isPlantingAnimationFinished : bool = true
 
 # ENDOF GLOBAL VARS
 
 func _ready():
 	inventory.update.connect(update_hotbar_contents)
+	inventory.update
+	updated_hotbar.update_hotbar_slots()
 
 
 func set_selected_slot(_selected_slot):
@@ -51,35 +66,89 @@ func _physics_process(delta):
 	move_and_slide()
 ### ENDOF _physics_process ###
 	
+func play_mining_animation():
+	state = STATE.MINE
+	match direction:
+		DIRECTION.UP:
+			animated_sprite_2d.play("mine_up")
+			action_timer.start()
+			await action_timer.timeout
+			state = STATE.IDLE
+		DIRECTION.DOWN:
+			animated_sprite_2d.play("mine_down")
+			action_timer.start()
+			await action_timer.timeout
+			state = STATE.IDLE
+		DIRECTION.LEFT:
+			animated_sprite_2d.play("mine_left")
+			action_timer.start()
+			await action_timer.timeout
+			state = STATE.IDLE
+		DIRECTION.RIGHT:
+			animated_sprite_2d.play("mine_right")
+			action_timer.start()
+			await action_timer.timeout
+			state = STATE.IDLE
+
+func play_planting_animation():
+	state = STATE.PLANT
+	match direction:
+		DIRECTION.UP:
+			animated_sprite_2d.play("plant_up")
+			action_timer.start()
+			await action_timer.timeout
+			state = STATE.IDLE
+		DIRECTION.DOWN:
+			animated_sprite_2d.play("plant_down")
+			action_timer.start()
+			await action_timer.timeout
+			state = STATE.IDLE
+		DIRECTION.LEFT:
+			animated_sprite_2d.play("plant_left")
+			action_timer.start()
+			await action_timer.timeout
+			state = STATE.IDLE
+		DIRECTION.RIGHT:
+			animated_sprite_2d.play("plant_right")
+			action_timer.start()
+			await action_timer.timeout
+			state = STATE.IDLE
+
 ### player_movement ###
 func player_movement(delta):
 	
 	# INPUT
-	if(Input.is_action_pressed("ui_right")):
+	if(Input.is_action_pressed("ui_right") and (state != STATE.MINE) and (state != STATE.PLANT)):
 		direction = DIRECTION.RIGHT
 		state = STATE.RUN
 		velocity.x = speed
 		velocity.y = 0
-	elif(Input.is_action_pressed("ui_left")):
+	elif(Input.is_action_pressed("ui_left") and (state != STATE.MINE) and (state != STATE.PLANT)):
 		direction = DIRECTION.LEFT
 		state = STATE.RUN
 		velocity.x = -speed
 		velocity.y = 0
-	elif(Input.is_action_pressed("ui_up")):
+	elif(Input.is_action_pressed("ui_up") and (state != STATE.MINE) and (state != STATE.PLANT)):
 		direction = DIRECTION.UP
 		state = STATE.RUN
 		velocity.x = 0
 		velocity.y = -speed
-	elif(Input.is_action_pressed("ui_down")):
+	elif(Input.is_action_pressed("ui_down") and (state != STATE.MINE) and (state != STATE.PLANT)):
 		direction = DIRECTION.DOWN
 		state = STATE.RUN
 		velocity.x = 0
 		velocity.y = speed
 	else: 
-		state = STATE.IDLE
+		if (state != STATE.MINE) and (state != STATE.PLANT):
+			state = STATE.IDLE
 		velocity.x = 0
 		velocity.y = 0
 	# ENDOF INPUT
+	
+	level_number.text = str(PersistentPlayerData.get_player_level())
+	xp_bar.set_xp_level()
+	
+
 ### ENDOF player_movement ###	
 
 ### player_animation ###
@@ -105,7 +174,6 @@ func player_animation():
 					animated_sprite_2d.play("idle_left")
 				DIRECTION.RIGHT:
 					animated_sprite_2d.play("idle_right")
-
 ### ENDOF player_animation ###
 
 func set_temporary_hotbar_label(new_text):
@@ -122,4 +190,5 @@ func update_hotbar_contents():
 	updated_hotbar.update_hotbar_slots()
 
 
-
+func _on_animated_sprite_2d_animation_finished():
+	pass

@@ -234,3 +234,11 @@ texture_filter = 1
 use_parent_material = true
 sprite_frames = SubResource("SpriteFrames_mpq2r")
 animation = &"level_16"
+
+[node name="stamina_amount" type="Label" parent="stamina_bar_image"]
+modulate = Color(0, 0, 0.945098, 1)
+use_parent_material = true
+offset_left = 97.0
+offset_top = -14.0
+offset_right = 137.0
+offset_bottom = 9.0

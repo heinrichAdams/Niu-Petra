@@ -23,6 +23,10 @@ config/icon="res://icon.svg"
 PersistentPlayerData="*res://Resources/persistent_player_data.gd"
 BetterTerrain="*res://addons/better-terrain/BetterTerrain.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [dotnet]
 
 project/assembly_name="Niu Petra"

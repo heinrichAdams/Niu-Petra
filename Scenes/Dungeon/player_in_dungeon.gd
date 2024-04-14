@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const JUMP_VELOCITY = -800.0
+const JUMP_VELOCITY = -630.0
 const KNOCKBACK_VELOCITY = 10
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -22,7 +22,8 @@ enum DIRECTION{
 # ENDOF ENUMS
 
 # GLOBAL VARS
-@export var max_health : int = 18
+@export var inventory: Inventory
+@export var max_health : int = 18 * PersistentPlayerData.get_player_level()
 @onready var current_health : int = max_health
 const speed : int = 200
 var state : STATE = STATE.IDLE
@@ -34,16 +35,17 @@ var direction : DIRECTION = DIRECTION.LEFT
 @onready var stamina_bar = $stamina_bar
 @onready var health_bar = $health_bar
 var isAttacking : bool = false
-const max_stamina = 18
+var currently_regenerating_stamina : bool = false
+var max_stamina : int = 18
 var current_stamina : int = max_stamina
 @onready var hurtbox = $hurtbox
 @onready var hit_timer = $hit_timer
+@onready var stamina_regen_timer = $stamina_regen_timer
 
 # ENDOF GLOBAL VARS
 
 
 func _ready():
-	stamina_bar.set_stamina_level(current_stamina)
 	weapon.disable()
 
 ### _physics_process ###
@@ -52,7 +54,6 @@ func _physics_process(delta):
 	player_animation()
 	move_and_slide()
 	handle_enemy_collison()
-	stamina_bar.set_stamina_level(current_stamina)
 ### ENDOF _physics_process ###
 	
 ### player_movement ###
@@ -80,22 +81,30 @@ func player_movement(delta):
 		velocity.y += gravity * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor()  and !isAttacking:
+	if Input.is_action_just_pressed("ui_accept") and current_stamina > 1 and is_on_floor()  and !isAttacking:
 		state = STATE.JUMP
 		velocity.y += JUMP_VELOCITY
+		current_stamina -= 2
+		regenerate_stamina()
 		
 	if(Input.is_action_just_pressed("LMB_click") and (current_stamina > 4)):
 		isAttacking = true
 		state = STATE.ATTACK
-		current_stamina = current_stamina - 4
+		current_stamina -= 4
+		regenerate_stamina()
+		
 	
-	stamina_bar.set_stamina_level(current_stamina)
-	health_bar.set_health_level(current_health)
+	stamina_bar.set_stamina_level(current_stamina, max_stamina)
+	health_bar.set_health_level(current_health, max_health)
+	
+	if current_stamina > max_stamina:
+		current_stamina = max_stamina
 	
 	if hit_timer.is_stopped():
 		animated_sprite_2d.modulate = Color(1,1,1,1)
 	
-
+	
+	
 	# ENDOF INPUT
 ### ENDOF player_movement ###	
 
@@ -171,5 +180,13 @@ func knockback():
 	move_and_slide()
 	
 func regenerate_stamina():
-	pass
+	if !currently_regenerating_stamina:
+		currently_regenerating_stamina = true
+		while(current_stamina < max_stamina):
+				stamina_regen_timer.start()
+				await stamina_regen_timer.timeout
+				current_stamina += 1
+		currently_regenerating_stamina = false
 
+func collect(item: InventoryItem):
+	inventory.insert(item)

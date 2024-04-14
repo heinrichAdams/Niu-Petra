@@ -752,6 +752,7 @@ shape = SubResource("CapsuleShape2D_pecv5")
 debug_color = Color(0, 0.647059, 0.168627, 0.419608)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
+visible = false
 color = Color(0.721569, 0.376471, 0, 1)
 texture = SubResource("GradientTexture2D_he7u0")
 texture_scale = 7.05
@@ -778,6 +779,9 @@ shape = SubResource("RectangleShape2D_huq3n")
 
 [node name="hit_timer" type="Timer" parent="."]
 wait_time = 0.1
+one_shot = true
+
+[node name="stamina_regen_timer" type="Timer" parent="."]
 one_shot = true
 
 [connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
