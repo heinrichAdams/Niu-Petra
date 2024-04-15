@@ -415,8 +415,6 @@ script = ExtResource("1_54vq2")
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_w2hkf")
 animation = &"left_die"
-frame = 9
-frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-14, -9)
@@ -447,10 +445,23 @@ shape = SubResource("CapsuleShape2D_hwxay")
 debug_color = Color(0.0196078, 0.564706, 0.870588, 0.419608)
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-color = Color(1, 0, 1, 1)
-energy = 2.05
+color = Color(0.741176, 0.572549, 0.596078, 1)
+energy = 1.78
+shadow_enabled = true
 texture = SubResource("GradientTexture2D_mcxe8")
 texture_scale = 7.04
+
+[node name="health_level" type="Label" parent="."]
+modulate = Color(1, 0.0352941, 0, 1)
+offset_left = -20.0
+offset_top = -117.0
+offset_right = 20.0
+offset_bottom = -94.0
+horizontal_alignment = 1
+
+[node name="hit_timer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]

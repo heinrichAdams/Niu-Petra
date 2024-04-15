@@ -22,6 +22,8 @@ config/icon="res://icon.svg"
 
 PersistentPlayerData="*res://Resources/persistent_player_data.gd"
 BetterTerrain="*res://addons/better-terrain/BetterTerrain.gd"
+BeehaveGlobalMetrics="*res://addons/beehave/metrics/beehave_global_metrics.gd"
+BeehaveGlobalDebugger="*res://addons/beehave/debug/global_debugger.gd"
 
 [display]
 
@@ -33,7 +35,7 @@ project/assembly_name="Niu Petra"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg", "res://addons/better-terrain/plugin.cfg")
+enabled=PackedStringArray("res://addons/Todo_Manager/plugin.cfg", "res://addons/beehave/plugin.cfg", "res://addons/better-terrain/plugin.cfg")
 
 [input]
 

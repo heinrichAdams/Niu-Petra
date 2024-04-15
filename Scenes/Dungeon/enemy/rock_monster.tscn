@@ -1,0 +1,274 @@
+[gd_scene load_steps=51 format=3 uid="uid://cdfitwv6b7kcx"]
+
+[ext_resource type="Script" path="res://Scenes/Dungeon/enemy/rock_monster.gd" id="1_la0fk"]
+[ext_resource type="Texture2D" uid="uid://i7m4myv362ag" path="res://Art/RockBoss/RockBoss hit left/ROCKBOSS_hit left1.png" id="1_obmxt"]
+[ext_resource type="Texture2D" uid="uid://dhs4gc7c8udbn" path="res://Art/RockBoss/RockBoss hit left/ROCKBOSS_hit left2.png" id="2_i4hmh"]
+[ext_resource type="Texture2D" uid="uid://dlegnps5akdly" path="res://Art/RockBoss/RockBoss hit left/ROCKBOSS_hit left3.png" id="3_bedeq"]
+[ext_resource type="Texture2D" uid="uid://c3cneyc5it8ed" path="res://Art/RockBoss/RockBoss hit left/ROCKBOSS_hit left4.png" id="4_qegc7"]
+[ext_resource type="Texture2D" uid="uid://cymdfcidnycib" path="res://Art/RockBoss/RockBoss hit left/ROCKBOSS_hit left5.png" id="5_km7tt"]
+[ext_resource type="Texture2D" uid="uid://dj0sie8lau88d" path="res://Art/RockBoss/RockBoss hit left/ROCKBOSS_hit left6.png" id="6_j5u7x"]
+[ext_resource type="Texture2D" uid="uid://bsrn8uvajyr84" path="res://Art/RockBoss/RockBoss hit left/ROCKBOSS_hit left7.png" id="7_mld5g"]
+[ext_resource type="Texture2D" uid="uid://djf5784gedbfv" path="res://Art/RockBoss/RockBoss hit left/ROCKBOSS_hit left8.png" id="8_n8gx3"]
+[ext_resource type="Texture2D" uid="uid://e2s753gx6jbp" path="res://Art/RockBoss/RockBoss hit left/ROCKBOSS_hit left9.png" id="9_kghsl"]
+[ext_resource type="Texture2D" uid="uid://dt18u5x5nkefb" path="res://Art/RockBoss/RockBoss hit left/ROCKBOSS_hit left10.png" id="10_m3xbc"]
+[ext_resource type="Texture2D" uid="uid://cx6d7sx6jbaw6" path="res://Art/RockBoss/RockBoss hit left/ROCKBOSS_hit left11.png" id="11_th6ia"]
+[ext_resource type="Texture2D" uid="uid://bei6omig5uwl2" path="res://Art/RockBoss/RockBoss hit left/ROCKBOSS_hit left12.png" id="12_4y8x3"]
+[ext_resource type="Texture2D" uid="uid://dyai0j6b5fsun" path="res://Art/RockBoss/RockBoss hit left/ROCKBOSS_hit left13.png" id="13_fq6vj"]
+[ext_resource type="Texture2D" uid="uid://cm817qqpbo8n8" path="res://Art/RockBoss/RockBoss hit right/ROCKBOSS_hit right1.png" id="14_smpph"]
+[ext_resource type="Texture2D" uid="uid://j0353yurrdtk" path="res://Art/RockBoss/RockBoss hit right/ROCKBOSS_hit right2.png" id="15_ghqwa"]
+[ext_resource type="Texture2D" uid="uid://y88yf436jw5f" path="res://Art/RockBoss/RockBoss hit right/ROCKBOSS_hit right3.png" id="16_tp67m"]
+[ext_resource type="Texture2D" uid="uid://drpsimd3iuuj8" path="res://Art/RockBoss/RockBoss hit right/ROCKBOSS_hit right4.png" id="17_071vg"]
+[ext_resource type="Texture2D" uid="uid://j3we7yemjte5" path="res://Art/RockBoss/RockBoss hit right/ROCKBOSS_hit right5.png" id="18_koju7"]
+[ext_resource type="Texture2D" uid="uid://dock5gnhmnyn8" path="res://Art/RockBoss/RockBoss hit right/ROCKBOSS_hit right6.png" id="19_qc45x"]
+[ext_resource type="Texture2D" uid="uid://d3shkh4b87dff" path="res://Art/RockBoss/RockBoss hit right/ROCKBOSS_hit right7.png" id="20_bsbc4"]
+[ext_resource type="Texture2D" uid="uid://cnxhtiw01a7vn" path="res://Art/RockBoss/RockBoss hit right/ROCKBOSS_hit right8.png" id="21_wo4uv"]
+[ext_resource type="Texture2D" uid="uid://sh50dwa7klqa" path="res://Art/RockBoss/RockBoss hit right/ROCKBOSS_hit right9.png" id="22_v2w4c"]
+[ext_resource type="Texture2D" uid="uid://bukt0gr7kbltn" path="res://Art/RockBoss/RockBoss hit right/ROCKBOSS_hit right10.png" id="23_vx8f6"]
+[ext_resource type="Texture2D" uid="uid://dyr43ysr3ro1f" path="res://Art/RockBoss/RockBoss hit right/ROCKBOSS_hit right11.png" id="24_vncrs"]
+[ext_resource type="Texture2D" uid="uid://n1uyvuns0bss" path="res://Art/RockBoss/RockBoss hit right/ROCKBOSS_hit right12.png" id="25_wpb88"]
+[ext_resource type="Texture2D" uid="uid://cidt5cjxekqxs" path="res://Art/RockBoss/RockBoss hit right/ROCKBOSS_hit right13.png" id="26_p2sum"]
+[ext_resource type="Texture2D" uid="uid://c6kodovbm5oda" path="res://Art/RockBoss/RockBoss idle left/ROCKBOSS_idle left1.png" id="27_j2hhl"]
+[ext_resource type="Texture2D" uid="uid://dx0irpg7uj54q" path="res://Art/RockBoss/RockBoss idle left/ROCKBOSS_idle left2.png" id="28_g4fuk"]
+[ext_resource type="Texture2D" uid="uid://dyawcbm0vfiq5" path="res://Art/RockBoss/RockBoss idle left/ROCKBOSS_idle left3.png" id="29_wc8uf"]
+[ext_resource type="Texture2D" uid="uid://cyq4kom7fij6t" path="res://Art/RockBoss/RockBoss idle left/ROCKBOSS_idle left4.png" id="30_tcq3e"]
+[ext_resource type="Texture2D" uid="uid://c3op1ojttpmgf" path="res://Art/RockBoss/RockBoss idle left/ROCKBOSS_idle left5.png" id="31_7u6bg"]
+[ext_resource type="Texture2D" uid="uid://c7f1j3rita5w3" path="res://Art/RockBoss/RockBoss idle left/ROCKBOSS_idle left6.png" id="32_72lkc"]
+[ext_resource type="Texture2D" uid="uid://d2qejxgjllwse" path="res://Art/RockBoss/RockBoss idle left/ROCKBOSS_idle left7.png" id="33_el3bb"]
+[ext_resource type="Texture2D" uid="uid://c4qkfevbpoi01" path="res://Art/RockBoss/RockBoss idle left/ROCKBOSS_idle left8.png" id="34_tuva0"]
+[ext_resource type="Texture2D" uid="uid://dwxges863x4ne" path="res://Art/RockBoss/RockBoss idle left/ROCKBOSS_idle left9.png" id="35_21tgd"]
+[ext_resource type="Texture2D" uid="uid://cgoyio10idso2" path="res://Art/RockBoss/RockBoss idle right/ROCKBOSS_idle right1.png" id="36_27ne6"]
+[ext_resource type="Texture2D" uid="uid://m0faie7d1msn" path="res://Art/RockBoss/RockBoss idle right/ROCKBOSS_idle right2.png" id="37_h66o2"]
+[ext_resource type="Texture2D" uid="uid://bfm1fgga2uw1w" path="res://Art/RockBoss/RockBoss idle right/ROCKBOSS_idle right3.png" id="38_tyatj"]
+[ext_resource type="Texture2D" uid="uid://cl1eekugs7k1e" path="res://Art/RockBoss/RockBoss idle right/ROCKBOSS_idle right4.png" id="39_lm0w5"]
+[ext_resource type="Texture2D" uid="uid://bk5nnr1vfe045" path="res://Art/RockBoss/RockBoss idle right/ROCKBOSS_idle right5.png" id="40_hmpnr"]
+[ext_resource type="Texture2D" uid="uid://dgnh12n1a33le" path="res://Art/RockBoss/RockBoss idle right/ROCKBOSS_idle right6.png" id="41_wchj5"]
+[ext_resource type="Texture2D" uid="uid://ckoe3j7y6i7r" path="res://Art/RockBoss/RockBoss idle right/ROCKBOSS_idle right7.png" id="42_l4yc5"]
+[ext_resource type="Texture2D" uid="uid://808twychaf1j" path="res://Art/RockBoss/RockBoss idle right/ROCKBOSS_idle right8.png" id="43_sb717"]
+[ext_resource type="Texture2D" uid="uid://byl2ycej1e2ua" path="res://Art/RockBoss/RockBoss idle right/ROCKBOSS_idle right9.png" id="44_0ysks"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r3s1r"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_obmxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_i4hmh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_bedeq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qegc7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_km7tt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_j5u7x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_mld5g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_n8gx3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_kghsl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_m3xbc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_th6ia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_4y8x3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_fq6vj")
+}],
+"loop": false,
+"name": &"hit_left",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_smpph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_ghqwa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_tp67m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_071vg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_koju7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_qc45x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_bsbc4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_wo4uv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_v2w4c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_vx8f6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_vncrs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_wpb88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_p2sum")
+}],
+"loop": false,
+"name": &"hit_right",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_j2hhl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_g4fuk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_wc8uf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_tcq3e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_7u6bg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_72lkc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_el3bb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_tuva0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_21tgd")
+}],
+"loop": true,
+"name": &"idle_left",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_27ne6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_h66o2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_tyatj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_lm0w5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_hmpnr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_wchj5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_l4yc5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_sb717")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_0ysks")
+}],
+"loop": true,
+"name": &"idle_right",
+"speed": 9.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mg51p"]
+radius = 165.109
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ks12a"]
+radius = 166.0
+height = 332.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_chdce"]
+radius = 165.484
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hsg12"]
+radius = 549.875
+
+[node name="rock_monster" type="CharacterBody2D"]
+texture_filter = 1
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_la0fk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_r3s1r")
+animation = &"idle_right"
+frame_progress = 0.706181
+
+[node name="collider" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_mg51p")
+disabled = true
+
+[node name="hitbox" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource("CapsuleShape2D_ks12a")
+debug_color = Color(0.843137, 0, 0.054902, 0.780392)
+
+[node name="hurtbox" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+shape = SubResource("CircleShape2D_chdce")
+debug_color = Color(0, 1, 0.4, 0.819608)
+
+[node name="player_detection" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player_detection"]
+shape = SubResource("CircleShape2D_hsg12")
+debug_color = Color(0.709804, 0.486275, 0, 0.627451)
+
+[node name="attack_timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="hit_timer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[node name="health_level" type="Label" parent="."]
+modulate = Color(1, 0.243137, 0.172549, 1)
+offset_left = -18.0
+offset_top = -164.0
+offset_right = 22.0
+offset_bottom = -141.0
+
+[connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
+[connection signal="area_entered" from="player_detection" to="." method="_on_player_detection_area_entered"]
+[connection signal="area_exited" from="player_detection" to="." method="_on_player_detection_area_exited"]

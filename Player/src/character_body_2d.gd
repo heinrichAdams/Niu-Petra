@@ -182,6 +182,9 @@ func set_temporary_hotbar_label(new_text):
 func collect(item: InventoryItem):
 	inventory.insert(item)
 
+func remove(item: InventoryItem):
+	inventory.remove(item)
+
 func get_item_at_selected_slot():
 	return inventory.get_item_at_slot(selected_hotbar_slot)
 

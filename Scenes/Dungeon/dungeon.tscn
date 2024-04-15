@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://dp0lvg6di7ney"]
+[gd_scene load_steps=25 format=3 uid="uid://dp0lvg6di7ney"]
 
 [ext_resource type="Texture2D" uid="uid://cc3iahvvjxshu" path="res://Art/Dungeon/DungeonTilemap.png" id="1_fo4uk"]
 [ext_resource type="Script" path="res://Scenes/Dungeon/dungeon.gd" id="1_uagv0"]
@@ -15,6 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c4gohjylv3mqa" path="res://Scenes/Dungeon/portal_in_dungeon/dungeon_portal.tscn" id="9_oumr2"]
 [ext_resource type="Script" path="res://Scenes/Dungeon/killbox2.gd" id="10_f0sk5"]
 [ext_resource type="PackedScene" uid="uid://dbwx5khiq2wqk" path="res://Resources/inventory/grass_seed.tscn" id="14_asikt"]
+[ext_resource type="PackedScene" uid="uid://cdfitwv6b7kcx" path="res://Scenes/Dungeon/enemy/rock_monster.tscn" id="16_vm3uv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hvyob"]
 texture = ExtResource("1_fo4uk")
@@ -11938,6 +11939,9 @@ texture = SubResource("GradientTexture2D_2qy6x")
 [node name="grass_seed" parent="." instance=ExtResource("14_asikt")]
 position = Vector2(169, 585)
 inDungeon = true
+
+[node name="rock_monster" parent="." instance=ExtResource("16_vm3uv")]
+position = Vector2(805, 303)
 
 [connection signal="area_entered" from="TileMap/killbox" to="TileMap/killbox" method="_on_area_entered"]
 [connection signal="body_entered" from="TileMap/killbox" to="TileMap/Player_In_Dungeon" method="_on_killbox_2_body_entered"]

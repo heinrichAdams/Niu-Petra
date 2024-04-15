@@ -1252,7 +1252,7 @@ vertical_alignment = 1
 visible = false
 light_mask = 4
 visibility_layer = 4
-z_index = 310
+z_index = 730
 offset_left = -223.0
 offset_top = -236.0
 offset_right = -141.0
@@ -1262,7 +1262,7 @@ scale = Vector2(3.865, 3.865)
 [node name="updated_hotbar" parent="." instance=ExtResource("17_inuk8")]
 light_mask = 4
 visibility_layer = 4
-z_index = 295
+z_index = 725
 material = SubResource("CanvasItemMaterial_vc1ap")
 offset_left = -187.0
 offset_top = 178.0
@@ -1270,7 +1270,7 @@ offset_right = -147.0
 offset_bottom = 218.0
 
 [node name="xp_bar" parent="." instance=ExtResource("18_1nyu3")]
-z_index = 310
+z_index = 720
 material = SubResource("CanvasItemMaterial_bg57a")
 offset_left = 2.0
 offset_top = -290.0
@@ -1280,7 +1280,7 @@ scale = Vector2(1.5, 1.5)
 
 [node name="pause_menu" parent="." instance=ExtResource("19_2rqb0")]
 visible = false
-z_index = 475
+z_index = 865
 
 [node name="action_timer" type="Timer" parent="."]
 wait_time = 0.4

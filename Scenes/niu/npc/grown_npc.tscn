@@ -1,4 +1,4 @@
-[gd_scene load_steps=101 format=3 uid="uid://wfocgyjg4hkq"]
+[gd_scene load_steps=125 format=3 uid="uid://wfocgyjg4hkq"]
 
 [ext_resource type="Script" path="res://Scenes/niu/npc/grown_npc.gd" id="1_1qf5n"]
 [ext_resource type="Texture2D" uid="uid://b2y1m0fdtx4em" path="res://Art/NPC/NPC_spawn-Sheet.png" id="1_wdroe"]
@@ -7,6 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://d2hbos4hoed3b" path="res://Art/NPC/NPC_run_left-Sheet-export.png" id="4_xagty"]
 [ext_resource type="Texture2D" uid="uid://b2u5r447ocp5l" path="res://Art/NPC/NPC_run_right-Sheet.png" id="5_pu40y"]
 [ext_resource type="Texture2D" uid="uid://cvk5ebkhhr56n" path="res://Art/NPC/NPC_run_back-Sheet.png" id="6_l6kln"]
+[ext_resource type="Texture2D" uid="uid://c12pwgdvlg6or" path="res://Art/NPC/indicator_icon.png" id="8_j3p7h"]
+[ext_resource type="Texture2D" uid="uid://dwvp1peg2vpkf" path="res://Art/UI/Boxes/UI_SMALLdialogueBOX-export.png" id="9_u4g12"]
+[ext_resource type="FontFile" uid="uid://drbocs0rjxrgx" path="res://Fonts/PixelifySans-VariableFont_wght.ttf" id="10_5x7q7"]
+[ext_resource type="Texture2D" uid="uid://bff25lr6mnqgy" path="res://Art/NPC/right_button-Sheet.png" id="11_xaexu"]
+[ext_resource type="Texture2D" uid="uid://dqjjqfhrocqgb" path="res://Art/NPC/left_button-Sheet.png" id="12_phsym"]
+[ext_resource type="Texture2D" uid="uid://dsxhw4eiqpqnl" path="res://Art/NPC/exit_button-Sheet.png" id="13_y4o85"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fxb7t"]
 atlas = ExtResource("1_wdroe")
@@ -681,6 +687,67 @@ animations = [{
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a0rtm"]
 height = 48.0
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a3k30"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cdsyx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_frg1i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tji7c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hkh10"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dpywd"]
+radius = 24.7386
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cd3gj"]
+texture = ExtResource("11_xaexu")
+region_rect = Rect2(0, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_psgyo"]
+texture = ExtResource("11_xaexu")
+region_rect = Rect2(48, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rxts4"]
+texture = ExtResource("11_xaexu")
+region_rect = Rect2(48, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uxqkk"]
+texture = ExtResource("11_xaexu")
+region_rect = Rect2(32, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v1fe8"]
+texture = ExtResource("12_phsym")
+region_rect = Rect2(48, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_o7or1"]
+texture = ExtResource("12_phsym")
+region_rect = Rect2(0, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_scr7d"]
+texture = ExtResource("12_phsym")
+region_rect = Rect2(0, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cloii"]
+texture = ExtResource("12_phsym")
+region_rect = Rect2(16, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vv6tp"]
+texture = ExtResource("13_y4o85")
+region_rect = Rect2(0, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0248n"]
+texture = ExtResource("13_y4o85")
+region_rect = Rect2(16, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_h3kyf"]
+texture = ExtResource("13_y4o85")
+region_rect = Rect2(0, 0, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_km5xl"]
+texture = ExtResource("13_y4o85")
+region_rect = Rect2(0, 0, 16, 16)
+
 [node name="grown_npc" type="CharacterBody2D"]
 texture_filter = 1
 script = ExtResource("1_1qf5n")
@@ -693,3 +760,90 @@ frame_progress = 0.300986
 [node name="hitbox" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8)
 shape = SubResource("CapsuleShape2D_a0rtm")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="dialogue_box_visibile_button" type="Button" parent="Area2D"]
+z_index = 315
+offset_left = -22.0
+offset_top = -14.0
+offset_right = -14.0
+offset_bottom = -6.0
+scale = Vector2(5.565, 5.565)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_a3k30")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_cdsyx")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_frg1i")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tji7c")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_hkh10")
+
+[node name="indicator" type="Sprite2D" parent="Area2D"]
+visible = false
+modulate = Color(1, 1, 0, 1)
+z_index = 310
+position = Vector2(0, -31)
+texture = ExtResource("8_j3p7h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+z_index = 400
+position = Vector2(0, 8)
+shape = SubResource("CircleShape2D_dpywd")
+
+[node name="dialogue_box" type="Sprite2D" parent="Area2D"]
+z_index = 290
+position = Vector2(0, -69)
+texture = ExtResource("9_u4g12")
+
+[node name="dialogue_text" type="Label" parent="Area2D/dialogue_box"]
+z_index = 345
+offset_left = -83.0
+offset_top = -29.0
+offset_right = -43.0
+offset_bottom = -6.0
+scale = Vector2(0.23, 0.23)
+theme_override_fonts/font = ExtResource("10_5x7q7")
+theme_override_font_sizes/font_size = 55
+
+[node name="next" type="Button" parent="Area2D/dialogue_box"]
+z_index = 315
+offset_left = 95.0
+offset_top = 1.0
+offset_right = 103.0
+offset_bottom = 9.0
+scale = Vector2(3.5, 3.5)
+theme_override_styles/normal = SubResource("StyleBoxTexture_cd3gj")
+theme_override_styles/hover = SubResource("StyleBoxTexture_psgyo")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rxts4")
+theme_override_styles/focus = SubResource("StyleBoxTexture_uxqkk")
+
+[node name="back" type="Button" parent="Area2D/dialogue_box"]
+z_index = 315
+offset_left = -123.0
+offset_top = 1.0
+offset_right = -115.0
+offset_bottom = 9.0
+scale = Vector2(3.5, 3.5)
+theme_override_styles/normal = SubResource("StyleBoxTexture_v1fe8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_o7or1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_scr7d")
+theme_override_styles/focus = SubResource("StyleBoxTexture_cloii")
+
+[node name="exit" type="Button" parent="Area2D/dialogue_box"]
+z_index = 315
+offset_left = -123.0
+offset_top = -29.0
+offset_right = -115.0
+offset_bottom = -21.0
+scale = Vector2(3.5, 3.5)
+theme_override_styles/normal = SubResource("StyleBoxTexture_vv6tp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_0248n")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_h3kyf")
+theme_override_styles/focus = SubResource("StyleBoxTexture_km5xl")
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="mouse_entered" from="Area2D/dialogue_box_visibile_button" to="." method="_on_dialogue_box_visibile_button_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D/dialogue_box_visibile_button" to="." method="_on_dialogue_box_visibile_button_mouse_exited"]
+[connection signal="pressed" from="Area2D/dialogue_box_visibile_button" to="." method="_on_dialogue_box_visibile_button_pressed"]
+[connection signal="pressed" from="Area2D/dialogue_box/next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="Area2D/dialogue_box/back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Area2D/dialogue_box/exit" to="." method="_on_exit_pressed"]

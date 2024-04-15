@@ -22,6 +22,7 @@ var crack_level_atlas = [
 var selected_slot : SELECTION = SELECTION.SLOT_1
 
 var npc = preload("res://Scenes/niu/npc/grown_npc.tscn")
+var npc_inventory_item = preload("res://Resources/inventory/npc_item.tres")
 
 @onready var player_data = $PlayerData
 @onready var character_body_2d = $CharacterBody2D
@@ -57,7 +58,7 @@ func _ready():
 	character_body_2d.set_temporary_hotbar_label(player_data.get_hotbar_slot_contents(selected_slot))
 	quick_load()
 	character_body_2d.set_selected_slot(1)
-	pass
+
 
 
 func _process(delta):
@@ -228,6 +229,7 @@ func plant(tile_pos):
 						npc_instance.global_position.x = get_global_mouse_position().x
 						add_child(npc_instance)
 						character_body_2d.play_planting_animation()
+						character_body_2d.remove(npc_inventory_item)
 						PersistentPlayerData.add_xp(1)
 
 # ENDOF PLANT
@@ -303,3 +305,11 @@ func clear_cell_from_position(position):
 		BetterTerrain.set_cell(tile_map, wall_layer, position, -1)
 		BetterTerrain.update_terrain_cells(tile_map, wall_layer, cells_to_be_updated)
 		tile_map.erase_cell(effects_layer, position)
+
+
+func on_grown_npc_mouse_left_npc():
+	print("SIGNAL RECIEVED BY MAIN SCRIPT")
+
+
+func on_grown_npc_mouse_over_npc():
+	print("SIGNAL RECIEVED BY MAIN SCRIPT")
