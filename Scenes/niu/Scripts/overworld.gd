@@ -159,9 +159,9 @@ func quick_load():
 			tile_map.set_cell(ground_layer, tile[0], tilemap_id, tile[1])
 			
 		# POPULATE GROUND LAYER
-		var wall_tiles = saved_tile_data.get("wall_tiles")
-		for tile in wall_tiles:
-			tile_map.set_cell(wall_layer, tile[0], wall_id, tile[1])
+		#var wall_tiles = saved_tile_data.get("wall_tiles")
+		#for tile in wall_tiles:
+			#tile_map.set_cell(wall_layer, tile[0], wall_id, tile[1])
 		
 		Load_Player_Data.emit()
 

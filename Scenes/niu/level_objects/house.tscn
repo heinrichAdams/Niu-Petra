@@ -1,28 +1,79 @@
-[gd_scene load_steps=4 format=3 uid="uid://ctuvu51s1yhe2"]
+[gd_scene load_steps=9 format=3 uid="uid://ctuvu51s1yhe2"]
 
-[ext_resource type="Texture2D" uid="uid://sqq3igo70xrc" path="res://Art/CaveFloor/MainLev2.0.png" id="1_20gc8"]
+[ext_resource type="Texture2D" uid="uid://2ukqkbysyhb7" path="res://Art/NPC/NPC House RED.png" id="1_3gx0j"]
+[ext_resource type="Script" path="res://Scenes/niu/level_objects/house.gd" id="1_81gvk"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bvmpc"]
-atlas = ExtResource("1_20gc8")
-region = Rect2(216, 708, 108, 118)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_567su"]
+size = Vector2(76, 52)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_ex3p5"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bvmpc")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="Gradient" id="Gradient_mwbo3"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_c57eo"]
+gradient = SubResource("Gradient_mwbo3")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.87619, 0.190476)
+
+[sub_resource type="Animation" id="Animation_jy1r1"]
+resource_name = "interpolate_light"
+length = 3.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.25, 0.8, 0.15, 0.4]
+}
+
+[sub_resource type="Animation" id="Animation_fj0e0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.25]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_letus"]
+_data = {
+"RESET": SubResource("Animation_fj0e0"),
+"interpolate_light": SubResource("Animation_jy1r1")
+}
 
 [node name="house" type="Node2D"]
+script = ExtResource("1_81gvk")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture_filter = 1
+texture = ExtResource("1_3gx0j")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_567su")
 
-[node name="cave_entrance" type="AnimatedSprite2D" parent="Area2D"]
-texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_ex3p5")
+[node name="PointLight2D" type="PointLight2D" parent="Area2D"]
+position = Vector2(1, -3)
+scale = Vector2(1.8125, 1.78125)
+color = Color(1, 1, 0.745098, 1)
+energy = 0.25
+texture = SubResource("GradientTexture2D_c57eo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Area2D"]
+libraries = {
+"": SubResource("AnimationLibrary_letus")
+}
