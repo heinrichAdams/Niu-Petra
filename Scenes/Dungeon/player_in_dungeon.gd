@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const JUMP_VELOCITY = -630.0
+const JUMP_VELOCITY = -770
 const KNOCKBACK_VELOCITY = 10
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
@@ -23,8 +23,8 @@ enum DIRECTION{
 
 # GLOBAL VARS
 @export var inventory: Inventory
-@export var max_health : int = 18 * PersistentPlayerData.get_player_level()
-@onready var current_health : int = max_health
+var max_health : int = 18 * PersistentPlayerData.get_player_level()
+var current_health : int = max_health
 const speed : int = 200
 var state : STATE = STATE.IDLE
 var direction : DIRECTION = DIRECTION.LEFT
@@ -36,7 +36,7 @@ var direction : DIRECTION = DIRECTION.LEFT
 @onready var health_bar = $health_bar
 var isAttacking : bool = false
 var currently_regenerating_stamina : bool = false
-var max_stamina : int = 18
+var max_stamina : int = 36
 var current_stamina : int = max_stamina
 @onready var hurtbox = $hurtbox
 @onready var hit_timer = $hit_timer
@@ -47,6 +47,11 @@ var current_stamina : int = max_stamina
 
 func _ready():
 	weapon.disable()
+	max_stamina = 18
+	current_stamina = max_stamina
+	max_health= 18 * PersistentPlayerData.get_player_level()
+	current_health = max_health
+	
 
 ### _physics_process ###
 func _physics_process(delta):
@@ -84,13 +89,13 @@ func player_movement(delta):
 	if Input.is_action_just_pressed("ui_accept") and current_stamina > 1 and is_on_floor()  and !isAttacking:
 		state = STATE.JUMP
 		velocity.y += JUMP_VELOCITY
-		current_stamina -= 2
+		current_stamina -= 1
 		regenerate_stamina()
 		
 	if(Input.is_action_just_pressed("LMB_click") and (current_stamina > 4)):
 		isAttacking = true
 		state = STATE.ATTACK
-		current_stamina -= 4
+		current_stamina -= 2
 		regenerate_stamina()
 		
 	

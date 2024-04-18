@@ -221,8 +221,9 @@ func plant(tile_pos):
 					var tile_data : TileData = tile_map.get_cell_tile_data(ground_layer, tile_pos)
 					if tile_data:
 						can_place_grass_tile = tile_data.get_custom_data("can_place_grass")
+						can_place_flower_tile = tile_data.get_custom_data("can_place_flowers")
 				
-					if can_place_grass_tile:
+					if can_place_grass_tile || can_place_flower_tile:
 						print("placed npc")
 						var npc_instance = npc.instantiate()
 						npc_instance.global_position.y = get_global_mouse_position().y

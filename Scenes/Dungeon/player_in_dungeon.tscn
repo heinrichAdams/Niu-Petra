@@ -697,8 +697,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pecv5"]
-radius = 22.9863
-height = 107.99
+radius = 37.9906
+height = 85.9901
 
 [sub_resource type="Gradient" id="Gradient_2h7oj"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -715,8 +715,9 @@ light_mode = 1
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_82hfm"]
 light_mode = 1
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_huq3n"]
-size = Vector2(46, 64)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3aawn"]
+radius = 17.0
+height = 64.0
 
 [node name="Player_In_Dungeon" type="CharacterBody2D"]
 collision_mask = 3
@@ -746,7 +747,6 @@ script = ExtResource("8_u2my1")
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
-position = Vector2(0, 10)
 rotation = -1.57529
 shape = SubResource("CapsuleShape2D_pecv5")
 debug_color = Color(0, 0.647059, 0.168627, 0.419608)
@@ -775,7 +775,7 @@ scale = Vector2(1.39, 1.39)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
-shape = SubResource("RectangleShape2D_huq3n")
+shape = SubResource("CapsuleShape2D_3aawn")
 
 [node name="hit_timer" type="Timer" parent="."]
 wait_time = 0.1

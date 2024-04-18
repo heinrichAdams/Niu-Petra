@@ -390,11 +390,11 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bmqtm"]
 radius = 35.9999
-height = 117.187
+height = 91.6671
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hwxay"]
 radius = 14.0
-height = 60.0
+height = 51.0638
 
 [sub_resource type="Gradient" id="Gradient_81phg"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
