@@ -1,4 +1,4 @@
 # Niu-Petra
-A roguelike city building and terraforming game
+A terraforming role playing game
 
 Created by Heinrich Adams and Irma Adams
