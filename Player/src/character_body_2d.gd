@@ -29,6 +29,10 @@ var menu_visible : bool = false
 @onready var hotbar_slot_2 = $Camera2D/hotbar/hotbar_slot_2
 @onready var hotbar_slot_3 = $Camera2D/hotbar/hotbar_slot_3
 @onready var hotbar_slot_4 = $Camera2D/hotbar/hotbar_slot_4
+@onready var step_timer = $step_timer
+@onready var plant_sound = $plant
+@onready var hit = $hit
+@onready var step = $step
 
 @onready var action_timer = $action_timer
 
@@ -71,21 +75,25 @@ func play_mining_animation():
 	match direction:
 		DIRECTION.UP:
 			animated_sprite_2d.play("mine_up")
+			hit.play()
 			action_timer.start()
 			await action_timer.timeout
 			state = STATE.IDLE
 		DIRECTION.DOWN:
 			animated_sprite_2d.play("mine_down")
+			hit.play()
 			action_timer.start()
 			await action_timer.timeout
 			state = STATE.IDLE
 		DIRECTION.LEFT:
 			animated_sprite_2d.play("mine_left")
+			hit.play()
 			action_timer.start()
 			await action_timer.timeout
 			state = STATE.IDLE
 		DIRECTION.RIGHT:
 			animated_sprite_2d.play("mine_right")
+			hit.play()
 			action_timer.start()
 			await action_timer.timeout
 			state = STATE.IDLE
@@ -95,21 +103,25 @@ func play_planting_animation():
 	match direction:
 		DIRECTION.UP:
 			animated_sprite_2d.play("plant_up")
+			plant_sound.play()
 			action_timer.start()
 			await action_timer.timeout
 			state = STATE.IDLE
 		DIRECTION.DOWN:
 			animated_sprite_2d.play("plant_down")
+			plant_sound.play()
 			action_timer.start()
 			await action_timer.timeout
 			state = STATE.IDLE
 		DIRECTION.LEFT:
 			animated_sprite_2d.play("plant_left")
+			plant_sound.play()
 			action_timer.start()
 			await action_timer.timeout
 			state = STATE.IDLE
 		DIRECTION.RIGHT:
 			animated_sprite_2d.play("plant_right")
+			plant_sound.play()
 			action_timer.start()
 			await action_timer.timeout
 			state = STATE.IDLE
@@ -158,12 +170,24 @@ func player_animation():
 			match direction:
 				DIRECTION.UP:
 					animated_sprite_2d.play("run_up")
+					if step_timer.is_stopped():
+						step.play()
+						step_timer.start()
 				DIRECTION.DOWN:
 					animated_sprite_2d.play("run_down")
+					if step_timer.is_stopped():
+						step.play()
+						step_timer.start()
 				DIRECTION.LEFT:
 					animated_sprite_2d.play("run_left")
+					if step_timer.is_stopped():
+						step.play()
+						step_timer.start()
 				DIRECTION.RIGHT:
 					animated_sprite_2d.play("run_right")
+					if step_timer.is_stopped():
+						step.play()
+						step_timer.start()
 		STATE.IDLE:
 			match direction:
 				DIRECTION.UP:

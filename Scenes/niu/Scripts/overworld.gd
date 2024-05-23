@@ -29,6 +29,7 @@ var npc_inventory_item = preload("res://Resources/inventory/npc_item.tres")
 @onready var target_box = $TargetBox
 @onready var tile_map = $TileMap
 @onready var bgm = $bgm
+@onready var break_sound = $break_sound
 
 const ADJACENT_VECTORS = [
 	Vector2i(0,1), 
@@ -262,6 +263,7 @@ func mine(tile_pos):
 				#BetterTerrain.update_terrain_cells(tile_map, wall_layer, affected_tile_list)
 				clear_cell_from_position(tile_pos)
 				PersistentPlayerData.add_xp(2)
+				break_sound.play()
 				
 		else:
 			tile_map.set_cell(effects_layer, tile_pos, wall_id, crack_level_atlas[0])

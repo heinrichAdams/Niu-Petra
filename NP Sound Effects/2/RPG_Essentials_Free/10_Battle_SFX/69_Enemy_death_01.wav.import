@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://tr0has1ro40i"
+path="res://.godot/imported/69_Enemy_death_01.wav-80126dab6d341244c987cf04848e6925.sample"
+
+[deps]
+
+source_file="res://NP Sound Effects/2/RPG_Essentials_Free/10_Battle_SFX/69_Enemy_death_01.wav"
+dest_files=["res://.godot/imported/69_Enemy_death_01.wav-80126dab6d341244c987cf04848e6925.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

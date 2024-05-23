@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://briysk3j7817t"
+path="res://.godot/imported/51_Flee_02.wav-2f820934f2db50d768c70db4e4e6bfb1.sample"
+
+[deps]
+
+source_file="res://NP Sound Effects/2/RPG_Essentials_Free/10_Battle_SFX/51_Flee_02.wav"
+dest_files=["res://.godot/imported/51_Flee_02.wav-2f820934f2db50d768c70db4e4e6bfb1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -41,6 +41,10 @@ var current_stamina : int = max_stamina
 @onready var hurtbox = $hurtbox
 @onready var hit_timer = $hit_timer
 @onready var stamina_regen_timer = $stamina_regen_timer
+@onready var step = $step
+@onready var step_timer = $step_timer
+@onready var jump = $jump
+@onready var attack = $attack
 
 # ENDOF GLOBAL VARS
 
@@ -88,12 +92,14 @@ func player_movement(delta):
 	# Handle jump.
 	if Input.is_action_just_pressed("ui_accept") and current_stamina > 1 and is_on_floor()  and !isAttacking:
 		state = STATE.JUMP
+		jump.play()
 		velocity.y += JUMP_VELOCITY
 		current_stamina -= 1
 		regenerate_stamina()
 		
 	if(Input.is_action_just_pressed("LMB_click") and (current_stamina > 4)):
 		isAttacking = true
+		attack.play()
 		state = STATE.ATTACK
 		current_stamina -= 2
 		regenerate_stamina()
@@ -120,8 +126,14 @@ func player_animation():
 			match direction:
 				DIRECTION.LEFT:
 					animated_sprite_2d.play("walk_left")
+					if step_timer.is_stopped():
+						step.play()
+						step_timer.start()
 				DIRECTION.RIGHT:
 					animated_sprite_2d.play("walk_right")
+					if step_timer.is_stopped():
+						step.play()
+						step_timer.start()
 		STATE.IDLE:
 			match direction:
 				DIRECTION.LEFT:

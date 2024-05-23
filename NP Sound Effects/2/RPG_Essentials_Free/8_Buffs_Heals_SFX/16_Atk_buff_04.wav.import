@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cevjn1tc4y7uc"
+path="res://.godot/imported/16_Atk_buff_04.wav-d557b071a7763fdc1a67c3e808f151e4.sample"
+
+[deps]
+
+source_file="res://NP Sound Effects/2/RPG_Essentials_Free/8_Buffs_Heals_SFX/16_Atk_buff_04.wav"
+dest_files=["res://.godot/imported/16_Atk_buff_04.wav-d557b071a7763fdc1a67c3e808f151e4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

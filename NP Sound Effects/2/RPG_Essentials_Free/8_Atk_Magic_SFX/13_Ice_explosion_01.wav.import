@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bwvb3res3mrf8"
+path="res://.godot/imported/13_Ice_explosion_01.wav-68e104148b6b0794ee7bff0773c8b4f4.sample"
+
+[deps]
+
+source_file="res://NP Sound Effects/2/RPG_Essentials_Free/8_Atk_Magic_SFX/13_Ice_explosion_01.wav"
+dest_files=["res://.godot/imported/13_Ice_explosion_01.wav-68e104148b6b0794ee7bff0773c8b4f4.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

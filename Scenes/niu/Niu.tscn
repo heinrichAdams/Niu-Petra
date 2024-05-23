@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://dnwjufd6i3jug"]
+[gd_scene load_steps=79 format=3 uid="uid://dnwjufd6i3jug"]
 
 [ext_resource type="Script" path="res://Scenes/niu/Scripts/overworld.gd" id="1_r4yr1"]
 [ext_resource type="Texture2D" uid="uid://cru7xwnsjtt2j" path="res://Art/CaveFloor/CaveFloorTilemap.png" id="2_o7a6f"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://d6fg7ggm8xku" path="res://Art/NPC/NPC House YELLOW.png" id="17_vsj7m"]
 [ext_resource type="PackedScene" uid="uid://cnsascch4705" path="res://Scenes/niu/level_objects/rock.tscn" id="20_7arc1"]
 [ext_resource type="PackedScene" uid="uid://dk1dp8wgn7xjw" path="res://Resources/inventory/flower_seed.tscn" id="21_4nvx3"]
+[ext_resource type="AudioStream" uid="uid://uptvykpj8ctc" path="res://NP Sound Effects/2/RPG_Essentials_Free/12_Player_Movement_SFX/08_Step_rock_02.wav" id="22_3ci7p"]
 
 [sub_resource type="Gradient" id="Gradient_xh71s"]
 offsets = PackedFloat32Array(0)
@@ -6045,6 +6046,11 @@ position = Vector2(-229, -1312)
 
 [node name="flower_seed" parent="." instance=ExtResource("21_4nvx3")]
 position = Vector2(696, 566)
+
+[node name="break_sound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_3ci7p")
+volume_db = 4.86
+pitch_scale = 0.52
 
 [connection signal="Load_Player_Data" from="." to="PlayerData" method="_on_overworld_load_player_data"]
 [connection signal="Save_Player_Data" from="." to="PlayerData" method="_on_overworld_save_player_data"]

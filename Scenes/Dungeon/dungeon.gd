@@ -1,5 +1,6 @@
 extends Node2D
 
+@onready var bgm = $bgm
 @onready var rock_monster = $rock_monster
 @onready var player_in_dungeon = $TileMap/Player_In_Dungeon
 
@@ -28,3 +29,7 @@ func _on_killbox_2_killbox_entered():
 func _on_dungeon_portal_body_entered(body):
 	get_tree().change_scene_to_file("res://Scenes/niu/Niu.tscn")
 
+
+
+func _on_bgm_finished():
+	bgm.play()

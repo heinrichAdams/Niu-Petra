@@ -394,7 +394,7 @@ height = 91.6671
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hwxay"]
 radius = 14.0
-height = 51.0638
+height = 82.9787
 
 [sub_resource type="Gradient" id="Gradient_81phg"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -427,7 +427,7 @@ position = Vector2(-14, -70)
 scale = Vector2(1.88, 4.08)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(0, 14)
+position = Vector2(5.31915, 14.2157)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_hwxay")
 debug_color = Color(0.996078, 0, 0.180392, 0.419608)
@@ -439,7 +439,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
-position = Vector2(0, 14)
+position = Vector2(-4.69283, 13.811)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_hwxay")
 debug_color = Color(0.0196078, 0.564706, 0.870588, 0.419608)

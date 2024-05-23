@@ -5,6 +5,8 @@ extends CharacterBody2D
 @onready var hitbox = $hitbox
 @onready var hit_timer = $hit_timer
 @onready var health_level = $health_level
+@onready var hit = $hit
+var has_already_played : bool = false
 
 enum DIRECTION{
 	LEFT,
@@ -48,10 +50,14 @@ func animate():
 		DIRECTION.RIGHT:
 			# can see player
 			if can_see_player and !should_wait:
+				if !hit.playing and !has_already_played:
+					hit.play()
+					has_already_played = true
 				animated_sprite_2d.play("hit_right")
 				hitbox.set_collision_layer_value(1,true)
 				hitbox.set_collision_mask_value(1,true)
 				await animated_sprite_2d.animation_finished
+				has_already_played = false
 				hitbox.set_collision_layer_value(1,false)
 				hitbox.set_collision_mask_value(1,false)
 				attack_timer.start()
@@ -66,10 +72,14 @@ func animate():
 		DIRECTION.LEFT:
 			# can see player
 			if can_see_player and !should_wait:
+				if !hit.playing and !has_already_played:
+					hit.play()
+					has_already_played = true
 				animated_sprite_2d.play("hit_left")
 				hitbox.set_collision_layer_value(1,true)
 				hitbox.set_collision_mask_value(1,true)
 				await animated_sprite_2d.animation_finished
+				has_already_played = false
 				hitbox.set_collision_layer_value(1,false)
 				hitbox.set_collision_mask_value(1,false)
 				attack_timer.start()

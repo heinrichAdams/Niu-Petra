@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://cdfitwv6b7kcx"]
+[gd_scene load_steps=52 format=3 uid="uid://cdfitwv6b7kcx"]
 
 [ext_resource type="Script" path="res://Scenes/Dungeon/enemy/rock_monster.gd" id="1_la0fk"]
 [ext_resource type="Texture2D" uid="uid://i7m4myv362ag" path="res://Art/RockBoss/RockBoss hit left/ROCKBOSS_hit left1.png" id="1_obmxt"]
@@ -45,6 +45,7 @@
 [ext_resource type="Texture2D" uid="uid://ckoe3j7y6i7r" path="res://Art/RockBoss/RockBoss idle right/ROCKBOSS_idle right7.png" id="42_l4yc5"]
 [ext_resource type="Texture2D" uid="uid://808twychaf1j" path="res://Art/RockBoss/RockBoss idle right/ROCKBOSS_idle right8.png" id="43_sb717"]
 [ext_resource type="Texture2D" uid="uid://byl2ycej1e2ua" path="res://Art/RockBoss/RockBoss idle right/ROCKBOSS_idle right9.png" id="44_0ysks"]
+[ext_resource type="AudioStream" uid="uid://bqc17xtsi6iny" path="res://NP Sound Effects/2/RPG_Essentials_Free/8_Atk_Magic_SFX/30_Earth_02.wav" id="46_2elrg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_r3s1r"]
 animations = [{
@@ -204,11 +205,12 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_mg51p"]
 radius = 115.039
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_xjxfv"]
-radius = 143.845
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ijk81"]
+radius = 95.5
+height = 281.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_chdce"]
-radius = 165.484
+radius = 137.233
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hsg12"]
 radius = 549.875
@@ -233,16 +235,16 @@ collision_layer = 0
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
-position = Vector2(-1.5, 4)
-shape = SubResource("CircleShape2D_xjxfv")
+position = Vector2(39, 4)
+shape = SubResource("CapsuleShape2D_ijk81")
 debug_color = Color(0.843137, 0, 0.054902, 0.780392)
 
 [node name="hurtbox" type="Area2D" parent="."]
-visible = false
 collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
+position = Vector2(15, 11)
 shape = SubResource("CircleShape2D_chdce")
 debug_color = Color(0, 1, 0.4, 0.819608)
 
@@ -267,6 +269,11 @@ offset_left = -18.0
 offset_top = -164.0
 offset_right = 22.0
 offset_bottom = -141.0
+
+[node name="hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("46_2elrg")
+volume_db = 3.194
+pitch_scale = 1.36
 
 [connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
 [connection signal="area_entered" from="player_detection" to="." method="_on_player_detection_area_entered"]

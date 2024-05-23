@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cualhg5lddrpl"
+path="res://.godot/imported/Balloon Pop 1.wav-38d1e1ab724c0d5f5c6960a5d4e353d2.sample"
+
+[deps]
+
+source_file="res://NP Sound Effects/1/Balloon Pop 1.wav"
+dest_files=["res://.godot/imported/Balloon Pop 1.wav-38d1e1ab724c0d5f5c6960a5d4e353d2.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://do0boasw2dudg"
+path="res://.godot/imported/26_Swim_Submerged_02.wav-560a83f11a619b3ab1d53fbd276a49af.sample"
+
+[deps]
+
+source_file="res://NP Sound Effects/2/RPG_Essentials_Free/12_Player_Movement_SFX/26_Swim_Submerged_02.wav"
+dest_files=["res://.godot/imported/26_Swim_Submerged_02.wav-560a83f11a619b3ab1d53fbd276a49af.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

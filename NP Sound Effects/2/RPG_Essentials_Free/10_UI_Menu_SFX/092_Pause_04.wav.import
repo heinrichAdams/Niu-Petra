@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cb2w7btiv0n5i"
+path="res://.godot/imported/092_Pause_04.wav-31011ee99cc55a5c844d9b050eacdcae.sample"
+
+[deps]
+
+source_file="res://NP Sound Effects/2/RPG_Essentials_Free/10_UI_Menu_SFX/092_Pause_04.wav"
+dest_files=["res://.godot/imported/092_Pause_04.wav-31011ee99cc55a5c844d9b050eacdcae.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

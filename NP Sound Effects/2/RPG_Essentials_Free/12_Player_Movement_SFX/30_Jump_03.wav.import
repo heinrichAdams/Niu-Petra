@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ciypw5wp0g7k"
+path="res://.godot/imported/30_Jump_03.wav-c6e6e1363eab3e1c56e5356fd2a41dfa.sample"
+
+[deps]
+
+source_file="res://NP Sound Effects/2/RPG_Essentials_Free/12_Player_Movement_SFX/30_Jump_03.wav"
+dest_files=["res://.godot/imported/30_Jump_03.wav-c6e6e1363eab3e1c56e5356fd2a41dfa.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

@@ -1,5 +1,6 @@
 extends Node
 
+@onready var teleport = $teleport
 
 signal Portal_entered
 
@@ -15,5 +16,6 @@ func _process(delta):
 
 func _on_area_2d_body_entered(body):
 	print("<<<PORTAL ENTERED PORTAL ENTERED PORTAL ENTERED>>>")
+	teleport.play()
 	Portal_entered.emit()
 	pass # Replace with function body.

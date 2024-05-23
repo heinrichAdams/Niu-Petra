@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dn4sca7mw71y"
+path="res://.godot/imported/Confirm 1.wav-b03871d58d7bb2c24a5659e72fa7c667.sample"
+
+[deps]
+
+source_file="res://NP Sound Effects/1/Confirm 1.wav"
+dest_files=["res://.godot/imported/Confirm 1.wav-b03871d58d7bb2c24a5659e72fa7c667.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

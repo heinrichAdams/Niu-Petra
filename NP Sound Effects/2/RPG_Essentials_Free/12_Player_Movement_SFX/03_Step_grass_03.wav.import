@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dx0c8c4fykhu8"
+path="res://.godot/imported/03_Step_grass_03.wav-a1394a629ec354e23a0d10f5cef566dd.sample"
+
+[deps]
+
+source_file="res://NP Sound Effects/2/RPG_Essentials_Free/12_Player_Movement_SFX/03_Step_grass_03.wav"
+dest_files=["res://.godot/imported/03_Step_grass_03.wav-a1394a629ec354e23a0d10f5cef566dd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

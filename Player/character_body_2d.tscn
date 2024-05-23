@@ -1,4 +1,4 @@
-[gd_scene load_steps=173 format=3 uid="uid://bnws40ftmi68d"]
+[gd_scene load_steps=176 format=3 uid="uid://bnws40ftmi68d"]
 
 [ext_resource type="Script" path="res://Player/src/character_body_2d.gd" id="1_y8ivw"]
 [ext_resource type="Resource" uid="uid://dpw1eo4paggsj" path="res://Resources/inventory/player_inventory.tres" id="2_2shbj"]
@@ -26,6 +26,9 @@
 [ext_resource type="PackedScene" uid="uid://dtmoij4w1un66" path="res://Resources/inventory/updated_hotbar.tscn" id="17_inuk8"]
 [ext_resource type="PackedScene" uid="uid://c7edoofwbt5fg" path="res://Scenes/niu/UI/xp_bar.tscn" id="18_1nyu3"]
 [ext_resource type="PackedScene" uid="uid://sh15hb1htl63" path="res://Scenes/niu/UI/pause_menu.tscn" id="19_2rqb0"]
+[ext_resource type="AudioStream" uid="uid://1dxfcc7oek57" path="res://NP Sound Effects/2/RPG_Essentials_Free/12_Player_Movement_SFX/12_Step_wood_03.wav" id="27_ibnc5"]
+[ext_resource type="AudioStream" uid="uid://dx0c8c4fykhu8" path="res://NP Sound Effects/2/RPG_Essentials_Free/12_Player_Movement_SFX/03_Step_grass_03.wav" id="27_q3sgl"]
+[ext_resource type="AudioStream" uid="uid://b2txifujr7718" path="res://NP Sound Effects/2/RPG_Essentials_Free/12_Player_Movement_SFX/45_Landing_01.wav" id="27_qqjn7"]
 
 [sub_resource type="Gradient" id="Gradient_jrnwh"]
 offsets = PackedFloat32Array(0, 0.693548)
@@ -1295,5 +1298,22 @@ offset_right = 22.0
 offset_bottom = -260.0
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="step_timer" type="Timer" parent="."]
+wait_time = 0.241
+one_shot = true
+
+[node name="plant" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("27_q3sgl")
+
+[node name="hit" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("27_qqjn7")
+volume_db = 0.896
+pitch_scale = 1.21
+
+[node name="step" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("27_ibnc5")
+volume_db = 0.868
+pitch_scale = 1.04
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

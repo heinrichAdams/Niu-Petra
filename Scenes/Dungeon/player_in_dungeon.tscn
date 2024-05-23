@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=3 uid="uid://cjn37wwemwwhm"]
+[gd_scene load_steps=91 format=3 uid="uid://cjn37wwemwwhm"]
 
 [ext_resource type="Script" path="res://Scenes/Dungeon/player_in_dungeon.gd" id="1_ut350"]
 [ext_resource type="Texture2D" uid="uid://ds0877bhtcn26" path="res://Art/Character/Character 2/SWORD LEFT Char 2-Sheet.png" id="2_svimp"]
@@ -13,6 +13,9 @@
 [ext_resource type="Script" path="res://Scenes/Dungeon/Weapon.gd" id="8_u2my1"]
 [ext_resource type="PackedScene" uid="uid://buv7wsxf084qy" path="res://Scenes/Dungeon/ui/health_bar.tscn" id="10_808x6"]
 [ext_resource type="PackedScene" uid="uid://d1lbdk5afyfop" path="res://Scenes/Dungeon/ui/stamina_bar.tscn" id="11_ni6kw"]
+[ext_resource type="AudioStream" uid="uid://1dxfcc7oek57" path="res://NP Sound Effects/2/RPG_Essentials_Free/12_Player_Movement_SFX/12_Step_wood_03.wav" id="14_g0x8k"]
+[ext_resource type="AudioStream" uid="uid://bypsg4p41v5lx" path="res://NP Sound Effects/2/RPG_Essentials_Free/10_Battle_SFX/35_Miss_Evade_02.wav" id="15_h001f"]
+[ext_resource type="AudioStream" uid="uid://ciypw5wp0g7k" path="res://NP Sound Effects/2/RPG_Essentials_Free/12_Player_Movement_SFX/30_Jump_03.wav" id="15_t43ip"]
 
 [sub_resource type="Animation" id="Animation_ho35d"]
 length = 0.001
@@ -697,8 +700,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pecv5"]
-radius = 37.9906
-height = 85.9901
+radius = 22.9144
+height = 63.9275
 
 [sub_resource type="Gradient" id="Gradient_2h7oj"]
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
@@ -747,7 +750,8 @@ script = ExtResource("8_u2my1")
 collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox"]
-rotation = -1.57529
+position = Vector2(-18, 2)
+rotation = -3.13954
 shape = SubResource("CapsuleShape2D_pecv5")
 debug_color = Color(0, 0.647059, 0.168627, 0.419608)
 
@@ -783,5 +787,23 @@ one_shot = true
 
 [node name="stamina_regen_timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="step" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_g0x8k")
+volume_db = 0.875
+pitch_scale = 1.16
+
+[node name="step_timer" type="Timer" parent="."]
+wait_time = 0.241
+one_shot = true
+
+[node name="jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_t43ip")
+volume_db = 0.903
+pitch_scale = 1.67
+
+[node name="attack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("15_h001f")
+volume_db = 0.52
 
 [connection signal="area_entered" from="hurtbox" to="." method="_on_hurtbox_area_entered"]
