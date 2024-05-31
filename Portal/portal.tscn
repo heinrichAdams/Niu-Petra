@@ -1,8 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://6y2i3e1gxmp3"]
+[gd_scene load_steps=6 format=3 uid="uid://6y2i3e1gxmp3"]
 
 [ext_resource type="Script" path="res://Portal.gd" id="1_n6l0i"]
 [ext_resource type="Texture2D" uid="uid://d1j4wh665yhbb" path="res://Art/Dungeon/Exit.png" id="2_di6v2"]
-[ext_resource type="AudioStream" uid="uid://q0q17ehgxc7a" path="res://NP Sound Effects/2/RPG_Essentials_Free/12_Player_Movement_SFX/88_Teleport_02.wav" id="3_y2ptk"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_l23yd"]
 
@@ -37,9 +36,6 @@ shadow_enabled = true
 shadow_color = Color(0, 0, 0.207843, 1)
 texture = SubResource("GradientTexture2D_84xto")
 texture_scale = 5.76
-
-[node name="teleport" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_y2ptk")
 
 [connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

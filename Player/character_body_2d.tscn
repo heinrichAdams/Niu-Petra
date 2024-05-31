@@ -21,7 +21,6 @@
 [ext_resource type="Texture2D" uid="uid://cru7xwnsjtt2j" path="res://Art/CaveFloor/CaveFloorTilemap.png" id="12_7dgpe"]
 [ext_resource type="Texture2D" uid="uid://kwjhsqymwejw" path="res://Art/Character/Character 2/PLANT RIGHT Char 2-Sheet-export.png" id="12_bmmvu"]
 [ext_resource type="Texture2D" uid="uid://pj1kx2sqp0el" path="res://Art/Character/Character 2/PLANT BACK Char 2-Sheet.png" id="13_asr11"]
-[ext_resource type="Texture2D" uid="uid://cp0dgfucd333h" path="res://Art/32x32pixelmeleeweapon.png" id="13_icniv"]
 [ext_resource type="PackedScene" uid="uid://ceo1wpr7pdfkw" path="res://Resources/inventory/inventory_ui.tscn" id="16_0qryy"]
 [ext_resource type="PackedScene" uid="uid://dtmoij4w1un66" path="res://Resources/inventory/updated_hotbar.tscn" id="17_inuk8"]
 [ext_resource type="PackedScene" uid="uid://c7edoofwbt5fg" path="res://Scenes/niu/UI/xp_bar.tscn" id="18_1nyu3"]
@@ -1089,6 +1088,9 @@ fill = 1
 fill_from = Vector2(0.504274, 0.5)
 fill_to = Vector2(0.952991, 0.901709)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j1y87"]
+load_path = "res://.godot/imported/32x32pixelmeleeweapon.png-e08b13508aab7b6ee57f03904c0e7468.ctex"
+
 [sub_resource type="LabelSettings" id="LabelSettings_rkl1s"]
 font_size = 30
 shadow_size = 12
@@ -1231,7 +1233,7 @@ texture = SubResource("GradientTexture2D_oywwg")
 modulate = Color(0.521569, 0.521569, 0.521569, 1)
 position = Vector2(32, 32)
 scale = Vector2(1.05176, 0.920759)
-texture = ExtResource("13_icniv")
+texture = SubResource("CompressedTexture2D_j1y87")
 hframes = 12
 vframes = 4
 frame = 26
